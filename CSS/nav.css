@@ -1,0 +1,98 @@
+header {
+  background-color: #091C2B;
+  height: 120px;
+  padding: 0 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.Logo {
+  width: auto;
+  height: 60px;
+  position: static;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.buscar {
+  border: 1px solid aliceblue;
+  background-color: aliceblue;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.socialContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.containerOne:hover { background-color: #d62976; }
+.containerTwo:hover { background-color: #00acee; }
+.containerThree:hover { background-color: #0072b1; }
+.containerFour:hover { background-color: #128C7E; }
+
+.socialContainer:active {
+  transform: scale(0.9);
+}
+
+.socialSvg {
+  width: 18px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
