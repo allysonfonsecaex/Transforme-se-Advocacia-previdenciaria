@@ -1,0 +1,19 @@
+.places-grid
+{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.place-card
+{
+    background-color: #fff;
+    color: #000;
+    width: 200px;
+}
+
+.place-card img
+{
+    width: 100%;
+}

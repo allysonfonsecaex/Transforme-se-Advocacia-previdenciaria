@@ -77,7 +77,7 @@
 .anterior { left: 20px; }
 .proximo { right: 20px; }
 
-/* Adicione esta regra ao final do seu carrosel.css */
+
 @media (max-width: 768px) {
   .btn-contato {
     position: absolute;
