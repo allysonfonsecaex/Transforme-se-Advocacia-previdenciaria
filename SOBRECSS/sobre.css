@@ -48,12 +48,13 @@ body{
 }
 
 .container{
-    border: 10px solid #E5DED2;
     background-color: #E5DED2;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 800px;
+    width: 50%;
+    height: 600px;
+    margin: 200px 400px;
+    border-radius: 4px;
+    position: relative;
+    
 }
 
 

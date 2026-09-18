@@ -3,3 +3,12 @@
     padding-right: 30px;
 
 }
+
+.container img{
+    height: 550px;
+    width: 650px;
+    border-radius: 6px;
+    position: absolute;
+    left: 580px;
+    top: 51px;
+}
