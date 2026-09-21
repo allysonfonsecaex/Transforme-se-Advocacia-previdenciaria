@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/nav.css">
     <link rel="stylesheet" href="CSS/carrosel.css">
-    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/card.css">
 </head>
 <body>
@@ -69,32 +69,79 @@
 
         
     </main>
-    <section>
-        <div class="member-grid">
-            <div class="member-card">
-                <p>Name</p>
-                    <img src="imagens/icons8-calculator-16.png" alt="">
+    <section class="servicos-section">
+        <div class="container-card">
+            <div class="card-item">
+                <img class="imagens" src="imagens/icons8-calculator-48.png" alt="Calculadora">
+                <p class="titulo">Calculadora</p>
+                <p class="descricao">Faça simulações rápidas para estimar o seu tempo de contribuição e regras de aposentadoria.</p>
+                <a href="#calculadora" class="btn-card">Acessar Calculadora</a>
+            </div>
+            
+            <div class="card-item">
+                <img class="imagens" src="imagens/icons8-lawyer-64.png" alt="Atendimento">
+                <p class="titulo">Realizo atendimento presencial e online</p>
+                <p class="descricao">Tire suas dúvidas sobre Aposentadoria, Pensão e Auxílio-Doença <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá!%20Gostaria%20de%20atendimento%20rápido%20sobre%20benefícios%20previdenciários." 
+                   target="_blank" 
+                   class="btn-card whatsapp-btn">
+                   Falar no WhatsApp
+                </a>
+            </div>
+            
+            <div class="card-item">
+                <img class="imagens" src="imagens/icons8-benefits-64.png" alt="Escritório">
+                <p class="titulo">Dúvidas Frequentes</p>
+                <p class="descricao">Esclareça os principais mitos e verdades sobre o INSS e garanta seus direitos com segurança.</p>
+                <a href="#perguntas" class="btn-card">Ver Perguntas</a>
+            </div>
+        </div>
     </section>
 
-
     <footer>
-        <div class="contato">
+        <div class="footer-coluna contato-info">
             <h3>Contato</h3>
+            <p><strong>Taís Almeida Advocacia Previdenciária</strong></p>
+            <p>São Paulo/SP</p>
+            <p>Tel: +55 11 99999-9999</p>
         </div>
 
-        <div class="mapa">
+        <div class="footer-coluna mapa">
             <h3>Mapa do site</h3>
             <ul>
+                <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#perguntas">Perguntas</a></li>
                 <li><a href="#atuacao">Atuação</a></li>
                 <li><a href="#artigos">Artigos</a></li>
-                <li><a href="#planejamento">Planejamento</a></li>
+                <li><a href="#planejamentos">Planejamento</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
 
-        <button class="Btn">
+        <div class="footer-coluna atuacao">
+            <h3>Atuação</h3>
+            <ul>
+                <li><span>Aposentadoria por Idade e Tempo</span></li>
+                <li><span>Pensão por Morte</span></li>
+                <li><span>Auxílio-Doença e BPC/LOAS</span></li>
+                <li><span>Revisão de Benefícios</span></li>
+                <li><a href="#planejamentos">Saiba mais</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-coluna noticias">
+            <h3>Últimas notícias</h3>
+            <div class="noticia-item">
+                <span class="data-noticia">07/04/2026</span>
+                <p>Muitos segurados desconhecem regras de transição da previdência</p>
+            </div>
+            <div class="noticia-item">
+                <span class="data-noticia">15/12/2025</span>
+                <p>Como solicitar benefício por incapacidade atualizado</p>
+            </div>
+        </div>
+
+        <button class="Btn" aria-label="WhatsApp">
             <div class="sign">
                 <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
@@ -103,6 +150,3 @@
             <div class="text">Whatsapp</div>
         </button>
     </footer>
-    
-</body>
-</html>

@@ -6,13 +6,6 @@ body{
     
 }
 
-.Cabecalho{
-    border: 1px solid black;
-    height: 120px;
-    background-color: #071D2A;
-    
-}
-
 .conteudo{
 
 }
@@ -57,9 +50,4 @@ body{
     
 }
 
-
-footer{
-    border: 1px solid black;
-    height: 200px;
-}
 

@@ -15,31 +15,6 @@ main {
 }
 
 
-footer {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  align-items: flex-start;
-}
-
-.mapa {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.mapa a {
-  text-decoration: none;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-.mapa a:hover {
-  text-decoration: underline;
-}
-
-
 .Btn {
   display: flex;
   align-items: center;
