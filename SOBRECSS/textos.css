@@ -1,26 +1,38 @@
-h1, h3{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Geneva, Tahoma, sans-serif, Times, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+h1, h2, h3{
+  font-family: 'Cormorant Garamond', serif;
+}
+
+p{
+  font-family: Lora;
 }
 
 .section1txt{
-  padding-left: 30px;
+  padding-left: 60px;
   text-align: center;
 }
 
+.Navegação{
+  font-family: Lora;
+}
+
+
+
 .Profissão{
-    font-size: 50px;
+    font-size: 55px;
     white-space: nowrap;
     
 }
 
 .Especialidade{
-    font-size: 25px;
+    font-size: 30px;
     white-space: nowrap;
 }
 
 .texto1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
     font-size: 30px;
     
     
@@ -29,14 +41,22 @@ h1, h3{
 .section2txt{
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 50px;
     margin: 0 300px;
     padding-top: 20px;
+    
     
 }
 
 .icone{
+  color: #222;
   font-size: 40px;
+}
+
+.icone svg {
+    width: 35px;
+    height: 35px;
+    stroke-width: 1.5;
 }
 
 .informacoes{
@@ -50,22 +70,54 @@ h1, h3{
 }
 
 .informacoes p{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   margin-top: 12px;
   font-size: 14px;
   
 }
 
-
-
-
-.section1txt{
-    
+.containertitulo{
+  text-align: left;
+  padding: 20px 0 0 20px;
 }
 
+.container h3{
 
+}
 
+.container h1{
+
+}
+
+.container p{
+  width: 55%;
+  font-size: 20px;
+  padding: 20px 0 0 20px;
+  line-height: 1.5;
+  
+}
+
+.section4txt{
+  width: 40%;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.section4 h1{
+  
+}
+
+.section4 h2{
+  
+}
+
+.section4 h3{
+
+}
+
+.section4 p{
+
+}
 
 
 

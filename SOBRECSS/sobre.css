@@ -1,13 +1,10 @@
 *{
-  
+  margin: 0;
+  padding: 0;
 }
 
 body{
-    
-}
-
-.conteudo{
-
+   
 }
 
 
@@ -25,23 +22,31 @@ body{
 
 .section2{
     background-color: #C6A15B;
-    border: 1px solid black;
     height: 130px;
     width: 100%;
-    position: relative;
 
     
 }
 
 .section3{
     background-color: #F4F1EB;
-    border: 1px solid black;
     display: flex;
-    height: 1200px;
+    
 }
 
+.section4{
+    background-color: #C6A15B;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+   
+    
+}
+
+
+
 .container{
-    background-color: #E5DED2;
+    background-color: #EEE9E1;
     width: 50%;
     height: 600px;
     margin: 200px 400px;
@@ -49,5 +54,7 @@ body{
     position: relative;
     
 }
+
+
 
 

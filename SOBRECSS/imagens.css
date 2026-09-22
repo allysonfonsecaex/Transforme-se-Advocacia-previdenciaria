@@ -11,4 +11,12 @@
     position: absolute;
     left: 580px;
     top: 51px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.section4 img{   
+    height: 1000px;
+    width: 50%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+    object-fit: cover;
 }
