@@ -1,0 +1,51 @@
+#aposentadoria1 {
+    display: none;
+    background-color: white;
+    padding: 15px;
+    
+}
+
+#pensao{
+    display: none;
+    background-color: white;
+    padding: 15px;
+}
+
+#auxilio{
+    display: none;
+    background-color: white;
+    padding: 15px;
+}
+
+#revisao{
+    display: none;
+    background-color: white;
+    padding: 15px;
+}
+
+#aposentadoria2{
+    display: none;
+    background-color: white;
+    padding: 15px;
+}
+
+#aposentadoria3{
+    display: none;
+    background-color: white;
+    padding: 15px;
+}
+
+
+
+button{
+    width: 100%;
+    padding: 15px;
+    padding-top: 40px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+
+}
