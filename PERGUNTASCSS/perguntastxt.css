@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+.perguntas-frequentes h1, h2, h3{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.perguntas-frequentes h1{
+    font-size: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.perguntas-frequentes p{
+    font-family: Lora;
+}
+
+.aposentadoria h3{
+    padding-bottom: 15px;
+}
