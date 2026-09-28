@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="CSS/carrosel.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/card.css">
+    <link rel="stylesheet" href="CSS/duvidas.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/noticias.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
@@ -17,11 +24,11 @@
       
         <nav>
             <div class="card">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#perguntas">Perguntas</a>
-                <a href="#artigos">Artigos</a>
-                <a href="#planejamentos">Planejamentos</a>
+                <a href="#inicio">INICIO</a>
+                <a href="#sobre">SOBRE</a>
+                <a href="#perguntas">PERGUNTAS</a>
+                <a href="#artigos">ARTIGOS</a>
+                <a href="#planejamentos">PLANEJAMENTOS</a>
             </div>
 
             <div class="buscar" role="button" aria-label="Buscar"> 
@@ -55,16 +62,21 @@
     </header>
 
     <main>
-        <div class="Carrosel-container">
-            <div class="trilhocarrosel">
-                <div class="slide">
-                    <img src="imagens/banner1.jpg" alt="Taís Almeida - Advocacia Previdenciária" class="banner-img">
-                    <a href="#contato" class="btn-contato">Entre em Contato</a>
-                </div>
-            </div>
-
-            <button class="anterior" onclick="mudarSlide(-1)">❮</button>
-            <button class="proximo" onclick="mudarSlide(1)">❯</button>
+    
+    <div class="Carrosel-container">
+        
+        <img id="imagem" src="imagens/banner1.jpg" alt="Taís Almeida - Advocacia Previdenciária" class="banner-img">
+        
+        
+        <button id="anterior" class="anterior">❮</button>
+        
+        
+        <button id="proximo" class="proximo">❯</button>
+        
+        <a href="#contato" class="btn-contato">Entre em Contato</a>
+        
+    </div>
+</main>
         </div>
 
         
@@ -95,8 +107,122 @@
                 <a href="#perguntas" class="btn-card">Ver Perguntas</a>
             </div>
         </div>
-    </section>
+        </section>
 
+        <section id="artigos" class="secao-noticias">
+    <div class="noticias-container">
+        <div class="noticias-header">
+            <h1>Últimas Notícias e Artigos</h1>
+            <p>Fique por dentro das atualizações do INSS e garanta seus direitos previdenciários.</p>
+        </div>
+
+        <div class="noticias-grid">
+            <!-- notiicia 1 -->
+            <article class="noticia-card">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Notícia 1">
+                <div class="noticia-conteudo">
+                    <span class="data-noticia">07/04/2026</span>
+                    <h3>Regras de transição da previdência: o que muda?</h3>
+                    <p>Muitos segurados desconhecem as novas regras de transição. Entenda como elas afetam a sua aposentadoria.</p>
+                    <a href="#" class="btn-ler-mais">Ler artigo completo &rarr;</a>
+                </div>
+            </article>
+
+           <!-- noticia 2 -->
+            <article class="noticia-card">
+                <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" alt="Notícia 2">
+                <div class="noticia-conteudo">
+                    <span class="data-noticia">15/12/2025</span>
+                    <h3>Como solicitar benefício por incapacidade atualizado</h3>
+                    <p>Saiba quais documentos são essenciais e como evitar o indeferimento do seu auxílio-doença no INSS.</p>
+                    <a href="#" class="btn-ler-mais">Ler artigo completo &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<div class="missao">
+    <h2>
+        Superar a burocracia do INSS com rigor técnico, agilidade e excelência estratégica. A minha missão é salvaguardar os seus direitos previdenciários, oferecendo uma atuação combativa e um atendimento de alto padrão. Transformamos complexidade legislativa em segurança financeira, tranquilidade e justiça para o seu futuro.
+    </h2>
+    <p class="missao-sub">Missão — Tais Almeida | Patrocínio e Advocacia Previdenciária</p>
+</div>
+
+
+       <section id="duvidas-form" class="secao-duvida">
+        
+        </div>
+    
+    <div class="banner-fundo">
+        <div class="banner-texto-topo">
+            <span>Advocacia Previdenciária</span>
+            <h1>Como podemos auxiliar:</h1>
+            <p>Como advogada especialista em Direito Previdenciário, estou totalmente preparada para ajudar na sua causa! Com um atendimento humanizado e exclusivo, atendo pessoas físicas para garantir os melhores resultados junto ao INSS.</p>
+        </div>
+    </div>
+
+    
+    <div class="duvida-layout-flex">
+        
+       
+        <div class="duvida-container">
+            <div class="duvida-texto">
+                <h2>Tire sua Dúvida</h2>
+                <p>Preencha o formulário e nossa equipe de advocacia previdenciária entrará em contato com você o mais rápido possível.</p>
+            </div>
+            
+            <form action="https://formsubmit.co/seu-email@exemplo.com" method="POST" class="form-duvida">
+                <input type="hidden" name="_subject" value="Nova dúvida enviada pelo site!">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="grupo-input">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="name" required placeholder="Seu nome completo">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" name="phone" required placeholder="(11) 99999-9999">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensagem">Escreva sua dúvida</label>
+                    <textarea id="mensagem" name="message" rows="4" required placeholder="Descreva brevemente o seu caso (ex: Aposentadoria, INSS...)"></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar-duvida">Enviar</button>
+            </form>
+        </div>
+
+        
+        <div class="perguntas-frequentes">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <h3>Quando procurar um Advogado Previdenciário?</h3>
+                <p>Visando auxiliar e tratar os problemas jurídicos que podem ocorrer com o INSS, a advocacia previdenciária pode atender segurados a fim de garantir concessões, revisões e o melhor planejamento para o seu benefício.</p>
+                <p>Antes de nos aprofundarmos no direito previdenciário, vamos entender melhor sobre como ele funciona e quais são os seus direitos garantidos.</p>
+                <a href="#" class="link-artigo">Leia o artigo completo, aqui.</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+            
+
+
+        </form>
+    </div>
+</section>
+        
+    </section>
+    
     <footer>
         <div class="footer-coluna contato-info">
             <h3>Contato</h3>
@@ -150,3 +276,6 @@
             <div class="text">Whatsapp</div>
         </button>
     </footer>
+    <script src="javascript/script.js"></script>
+</body>
+</html>
