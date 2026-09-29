@@ -5,6 +5,7 @@
     max-width: 100%;
     margin: 0;
     overflow: hidden;
+    
 }
 
 .banner-img {
@@ -41,7 +42,8 @@
     background: rgba(9, 28, 43, 1);
 }
 
-.btn-contato {
+.btn-contato 
+{
     position: absolute;
     bottom: 8%;
     right: 8%;
