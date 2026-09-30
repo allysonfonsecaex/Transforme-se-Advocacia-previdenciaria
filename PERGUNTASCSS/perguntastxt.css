@@ -14,8 +14,20 @@
 
 .perguntas-frequentes p{
     font-family: Lora;
+    
 }
 
 .aposentadoria h3{
     padding-bottom: 15px;
+}
+
+.beneficios h3{
+    margin: 40px 0 15px 0;
+    font-size: 22px;
+    
+}
+
+.resposta p{
+    color: #000;
+    margin: 0;
 }

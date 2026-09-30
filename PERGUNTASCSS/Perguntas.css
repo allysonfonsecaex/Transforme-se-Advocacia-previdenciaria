@@ -11,7 +11,49 @@ input{
     height: 1000px;
 }
 
+.perguntas{
+    
+}
+
+.resposta {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 15px;
+
+    transition: all 0.4s ease;
+}
+
+.resposta.aberta {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px;
+    overflow: visible;
+    color: black;
+    background-color: white;
+}
+
 .aposentadoria{
     padding-top: 30px;
     padding-left: 15px;
+    border-bottom: 1px solid #ddd;
 }
+
+.aposentadoria button{
+    width: 100%;
+    padding: 18px 10px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.beneficios{
+    padding-top: 30px;
+    
+}
+
