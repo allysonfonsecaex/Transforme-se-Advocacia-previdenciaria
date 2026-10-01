@@ -8,11 +8,12 @@ input{
 
 .perguntas-frequentes{
     background-color: #F4F1EB;
-    height: 1000px;
+    
 }
 
 .perguntas{
-    
+    margin: 20px 0 0 15px;
+    padding-bottom: 20px;
 }
 
 .resposta {
@@ -33,13 +34,12 @@ input{
     background-color: white;
 }
 
-.aposentadoria{
+.topicos{
     padding-top: 30px;
-    padding-left: 15px;
     border-bottom: 1px solid #ddd;
 }
 
-.aposentadoria button{
+.topicos button{
     width: 100%;
     padding: 18px 10px;
     background: none;
@@ -52,8 +52,5 @@ input{
 
 
 
-.beneficios{
-    padding-top: 30px;
-    
-}
+
 
