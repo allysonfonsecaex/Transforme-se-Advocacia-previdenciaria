@@ -74,6 +74,23 @@ body{
     
 }
 
+/*Tablet*/
+@media (max-width: 768){
+    
+}
+
+
+/*Celular*/
+
+@media (max-width: 480px){
+    .conteudo{
+        flex-direction: column;
+    }
+    
+}
+
+
+
 
 
 

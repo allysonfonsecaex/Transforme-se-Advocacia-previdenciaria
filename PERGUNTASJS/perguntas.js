@@ -9,9 +9,10 @@ function mostrarResposta(id) {
 
 function pesquisar() {
 
-    let pesquisa = document.getElementById("pesquisa").value.toLowerCase();
+    let pesquisa = document.getElementById("pesquisa").value
+    .toLowerCase();
 
-    let perguntas = document.querySelectorAll(".aposentadoria");
+    let perguntas = document.querySelectorAll(".topicos");
 
     perguntas.forEach(function(item) {
 
