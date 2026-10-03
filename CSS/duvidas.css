@@ -1,5 +1,3 @@
-*
-
 .secao-duvida {
     position: relative;
     width: 100%;
@@ -270,14 +268,17 @@
 .perguntas-frequentes {
     flex-grow: 1;
     padding-top: 20px;
+    text-align: justify;
+    
 }
 
 .perguntas-frequentes h2 {
     color: #091C2B;
     font-size: 2.2rem;
     margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    
 }
-
 .faq-item h3 {
     color: #091C2B;
     font-size: 1.25rem;
@@ -302,29 +303,6 @@
     text-decoration: underline;
 }
 
-.missao {
-    text-align: center; 
-    max-width: 900px;   
-    margin: 80px auto; 
-    padding: 0 20px;
-}
-
-.missao h2 {
-    font-size: 1.9rem;  
-    font-weight: 600;   
-    color: #111111;     
-    line-height: 1.4;   
-    margin-bottom: 20px; 
-    font-family: Garamond, "Times New Roman", serif;
-}
-
-.missao-sub {
-    font-size: 1rem;
-    font-weight: bold;
-    color: gold;     
-    text-transform: uppercase; 
-    letter-spacing: 0.5px;
-}
 
 @media (max-width: 900px) {
     .duvida-layout-flex {

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family:  sans-serif;
   overflow-x: hidden;
 }
 
@@ -13,7 +13,6 @@ main {
   display: flex;
   justify-content: center;
 }
-
 
 .Btn {
   display: flex;
