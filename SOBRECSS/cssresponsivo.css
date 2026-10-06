@@ -1,0 +1,282 @@
+@media (max-width: 1024px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SECTION 1 */
+    .section1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .section1txt {
+        width: 100%;
+        padding-left: 0;
+        box-sizing: border-box;
+    }
+
+    .Especialidade {
+        font-size: 26px;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .Profissão {
+        font-size: 45px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .texto1 {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .section1 img {
+        display: none !important;
+    }
+
+
+    /* SECTION 2 */
+    .section2 {
+        height: auto;
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .section2txt {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .informacoes h3 {
+        font-size: 20px;
+    }
+
+    .informacoes p {
+        font-size: 14px;
+    }
+
+
+    /* SECTION 3 */
+    .section3 {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 90%;
+        height: auto;
+        margin: 40px auto;
+        box-sizing: border-box;
+        padding-bottom: 30px;
+    }
+
+    .containertitulo {
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 35px;
+        word-break: normal;
+    }
+
+    .container p {
+        width: auto;
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .container img {
+        display: none !important;
+    }
+
+
+    /* SECTION 4 */
+    .section4 {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section4txt {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 20px;
+    }
+
+    .section4 img {
+        display: none !important;
+    }
+
+
+    /* BOTÕES */
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* ELEMENTOS QUE USAVAM POSITION ABSOLUTE */
+    .experiencia,
+    .atendimento,
+    .local {
+        position: static;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SECTION 1 */
+    .section1 {
+        padding: 40px 15px;
+    }
+
+    .Especialidade {
+        font-size: 20px;
+        line-height: 1.3;
+        white-space: normal;
+    }
+
+    .Profissão {
+        font-size: 25px;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .texto1 {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .section1 img {
+        display: none !important;
+    }
+
+    .whatsapp {
+        width: 200px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* SECTION 2 */
+    .section2 {
+        padding: 30px 15px;
+    }
+
+    .section2txt {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .icone {
+        font-size: 30px;
+    }
+
+    .informacoes {
+        align-items: center;
+        text-align: center;
+    }
+
+    .informacoes h3 {
+        font-size: 20px;
+    }
+
+
+    /* SECTION 3 */
+    .section3 {
+        padding: 10px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    .containertitulo {
+        padding: 20px 15px;
+    }
+
+    .container h3 {
+        font-size: 20px;
+    }
+
+    .container h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .container p {
+        padding: 15px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .container img {
+        display: none !important;
+    }
+
+
+    /* SECTION 4 */
+    .section4 {
+        text-align: center;
+    }
+
+    .section4txt {
+        padding: 25px 15px;
+    }
+
+    .section4 h2 {
+        font-size: 22px;
+    }
+
+    .section4 h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .section4 button {
+        font-size: 14px;
+        padding: 20px 10px;
+    }
+
+    .section4 img {
+        display: none !important;
+    }
+
+
+    /* MAPA */
+    .mapa {
+        height: 300px;
+    }
+}
