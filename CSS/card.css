@@ -1,6 +1,7 @@
 .servicos-section {
     padding: 60px 0 20px 0;
     background-color: #f2f4f7;
+    align-items: center;
 }
 
 .container-card {
@@ -11,6 +12,7 @@
     gap: 30px;
     flex-wrap: wrap;
 }
+
 
 .card-item {
     background-color: #ffffff;

@@ -3,7 +3,7 @@ let btnAnterior = document.getElementById("anterior");
 let Quadroimagem = document.getElementById("imagem");
 
 let album = [
-    "imagens/Banner de Advocacia Previdenciária.png"
+    "imagens/Aposentadoria com Clareza e Respeito.png"
     //adicionar imagem pro carrosel",
     //"adicionar imagem pro carrosel"//
 ];
