@@ -1,14 +1,17 @@
-.conteudo{
-    
+.conteudo {
+    margin-top: 0;
+    padding-top: 0;
 }
 
+    
 input{
     
 }
 
 .perguntas-frequentes{
     background-color: #F4F1EB;
-    
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .perguntas{

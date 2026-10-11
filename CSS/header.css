@@ -1,45 +1,183 @@
 
-@media (max-width: 992px) 
-{
-  header {
-    height: auto;
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-}
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-  .Navegação {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .card {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-}
-
-
-
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .btn-contato {
+header.Navegação {
     position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    width: 100%;
+    min-height: 104px;
+    padding: 18px clamp(20px, 4vw, 56px);
+    background: var(--cor-marinho);
+    color: #ffffff;
+}
+
+header.Navegação .Logo {
     display: block;
-    margin: 10px auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: min(240px, 30vw);
+    height: 62px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+header.Navegação nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-width: 0;
+}
+
+header.Navegação .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+
+header.Navegação nav .card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.035em;
     text-align: center;
-    right: 20px;
-    bottom: 40px;
-  }
+    text-decoration: none;
+    transition: color 180ms ease, background-color 180ms ease;
+}
+
+header.Navegação nav .card a:hover,
+header.Navegação nav .card a:focus-visible {
+    background: rgb(255 255 255 / 10%);
+    color: #f1d9ad;
+}
+
+header.Navegação .buscar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    border: 1px solid rgb(255 255 255 / 35%);
+    border-radius: 50%;
+    background: transparent;
+}
+
+header.Navegação .buscar img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+header.Navegação .socialContainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-radius: 50%;
+    background: rgb(255 255 255 / 10%);
+    text-decoration: none;
+    transition: transform 180ms ease, background-color 180ms ease;
+}
+
+header.Navegação .socialContainer:hover {
+    transform: translateY(-2px);
+}
+
+header.Navegação .containerOne:hover { background: #b92b69; }
+header.Navegação .containerThree:hover { background: #0a66c2; }
+header.Navegação .containerFour:hover { background: #128c7e; }
+
+header.Navegação .socialSvg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+header.Navegação .socialSvg path {
+    fill: #ffffff;
+}
+
+@media (max-width: 1120px) {
+    header.Navegação {
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+        padding: 20px 24px;
+    }
+
+    header.Navegação .Logo {
+        max-width: 220px;
+        height: 56px;
+        object-position: center;
+    }
+
+    header.Navegação nav {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    header.Navegação {
+        gap: 12px;
+        padding: 16px 14px;
+    }
+
+    header.Navegação nav {
+        gap: 8px;
+    }
+
+    header.Navegação .card {
+        width: 100%;
+        gap: 3px;
+    }
+
+    header.Navegação nav .card a {
+        min-height: 44px;
+        padding: 10px 9px;
+        font-size: 0.76rem;
+    }
+
+    header.Navegação .buscar {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    header.Navegação .socialContainer {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 380px) {
+    header.Navegação nav .card a {
+        padding-inline: 7px;
+        font-size: 0.7rem;
+    }
 }

@@ -1,98 +1,163 @@
+/* =========================================================
+   CARDS DE SITUACOES E SERVICOS
+   ========================================================= */
+.center {
+    padding: 46px 22px 18px;
+    background: var(--cor-superficie-suave);
+}
+
+.texto_centro {
+    width: 100%;
+    max-width: var(--largura-conteudo);
+    margin: 0 auto;
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    line-height: 1.35;
+    text-align: left;
+}
+
+.texto_centro h2 {
+    max-width: 850px;
+    margin: 0;
+    font: inherit;
+}
+
 .servicos-section {
-    padding: 60px 0 20px 0;
-    background-color: #f2f4f7;
-    align-items: center;
+    display: block;
+    width: 100%;
+    padding: 26px 22px 72px;
+    background: var(--cor-superficie-suave);
 }
 
 .container-card {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: var(--largura-conteudo);
+    margin: 0 auto;
 }
 
-
 .card-item {
-    background-color: #ffffff;
-    color: #1a1a1a;
-    width: 320px;
-    min-height: 380px;
-    padding: 40px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 310px;
+    padding: clamp(24px, 3vw, 34px);
+    border: 1px solid #e4e8ec;
+    border-radius: var(--raio-card);
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    box-shadow: 0 5px 18px rgb(9 28 43 / 5%);
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
 .card-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(9, 28, 43, 0.15);
+    transform: translateY(-4px);
+    border-color: rgb(165 138 93 / 60%);
+    box-shadow: var(--sombra-card);
 }
 
 .card-item .imagens {
-    width: 54px;
-    height: 54px;
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin: 0 0 22px;
     object-fit: contain;
-    margin-bottom: 25px;
-    opacity: 0.85;
 }
 
 .card-item .titulo {
-    font-size: 1.25rem;
+    margin: 0 0 12px;
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #091C2B;
-    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .card-item .descricao {
-    font-size: 0.95rem;
-    color: #555555;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .container-card {
-        flex-direction: column;
-        align-items: center;
-    }
+    margin: 0 0 22px;
+    color: var(--cor-texto-suave);
+    font-size: 0.98rem;
+    line-height: 1.7;
 }
 
 .btn-card {
-    display: inline-block;
-    margin-top: auto; 
-    background-color: #091C2B;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    margin-top: auto;
+    padding: 11px 16px;
+    border: 1px solid var(--cor-marinho);
+    border-radius: 7px;
+    background: var(--cor-marinho);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
     text-decoration: none;
-    border-radius: 6px;
-    border: 1px solid #FFD700;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .btn-card:hover {
-    background-color: #13334c;
-    transform: scale(1.03);
+    background: #ffffff;
+    color: var(--cor-marinho);
+    transform: translateY(-1px);
 }
 
+.btn-card:focus-visible {
+    outline: 3px solid var(--cor-dourado);
+    outline-offset: 3px;
+}
 
 .whatsapp-btn {
-    background-color: #00875A;
-    border-color: #00a86b;
-    margin-top: 60px;
+    border-color: #128c7e;
+    background: #128c7e;
 }
 
 .whatsapp-btn:hover {
-    background-color: #006e49;
+    background: #0d7468;
+    color: #ffffff;
 }
 
+@media (max-width: 980px) {
+    .container-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
 
+@media (max-width: 620px) {
+    .center {
+        padding: 38px 20px 16px;
+    }
 
+    .servicos-section {
+        padding: 20px 16px 54px;
+    }
 
+    .container-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
 
+    .card-item {
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .card-item .imagens {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+    }
+
+    .btn-card {
+        width: 100%;
+    }
+}
