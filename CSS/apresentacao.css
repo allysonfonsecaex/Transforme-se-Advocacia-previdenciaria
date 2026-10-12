@@ -1,4 +1,8 @@
 
+/* =========================================================
+   APRESENTACAO DA TAIS
+   ========================================================= */
+
 .apresentacao-tais {
     width: 100%;
     padding: var(--espaco-secao) 24px;
@@ -79,7 +83,9 @@
     line-height: 1.4;
     text-align: center;
     text-decoration: none;
-    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    transition: background-color 180ms ease,
+                color 180ms ease,
+                transform 180ms ease;
 }
 
 .botao-apresentacao:hover {
@@ -119,10 +125,12 @@
     line-height: 1.7;
 }
 
+/* FOTO DA TAIS */
 .apresentacao-imagem-container {
     position: relative;
     width: 100%;
     max-width: 440px;
+    min-width: 0;
     justify-self: end;
 }
 
@@ -163,6 +171,7 @@
     line-height: 1.5;
 }
 
+/* TABLETS */
 @media (max-width: 900px) {
     .apresentacao-container {
         grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
@@ -179,6 +188,7 @@
     }
 }
 
+/* CELULARES */
 @media (max-width: 650px) {
     .apresentacao-tais {
         padding: 46px 20px 54px;
@@ -233,6 +243,7 @@
     }
 }
 
+/* CELULARES PEQUENOS */
 @media (max-width: 380px) {
     .apresentacao-tais {
         padding-inline: 16px;

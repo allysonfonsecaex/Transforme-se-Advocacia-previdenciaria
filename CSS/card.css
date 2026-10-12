@@ -1,6 +1,8 @@
+
 /* =========================================================
    CARDS DE SITUACOES E SERVICOS
    ========================================================= */
+
 .center {
     padding: 46px 22px 18px;
     background: var(--cor-superficie-suave);
@@ -51,7 +53,9 @@
     background: var(--cor-superficie);
     color: var(--cor-texto);
     box-shadow: 0 5px 18px rgb(9 28 43 / 5%);
-    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    transition: transform 200ms ease,
+                box-shadow 200ms ease,
+                border-color 200ms ease;
 }
 
 .card-item:hover {
@@ -60,8 +64,10 @@
     box-shadow: var(--sombra-card);
 }
 
+/* ICONES DOS CARDS */
 .card-item .imagens {
     display: block;
+    flex-shrink: 0;
     width: 52px;
     height: 52px;
     margin: 0 0 22px;
@@ -101,7 +107,9 @@
     line-height: 1.4;
     text-align: center;
     text-decoration: none;
-    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    transition: background-color 180ms ease,
+                color 180ms ease,
+                transform 180ms ease;
 }
 
 .btn-card:hover {
@@ -125,6 +133,7 @@
     color: #ffffff;
 }
 
+/* TABLETS */
 @media (max-width: 980px) {
     .container-card {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -132,6 +141,7 @@
     }
 }
 
+/* CELULARES */
 @media (max-width: 620px) {
     .center {
         padding: 38px 20px 16px;
@@ -152,6 +162,7 @@
     }
 
     .card-item .imagens {
+        display: block;
         width: 48px;
         height: 48px;
         margin-bottom: 16px;
