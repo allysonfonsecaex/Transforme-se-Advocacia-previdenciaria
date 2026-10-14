@@ -1,182 +1,640 @@
-/* Acessibilidade LexWeb */
 
-/* ---------- foco visível para quem usa teclado ---------- */
+/* =====================================================
+   LEXWEB — PAINEL COMPLETO DE ACESSIBILIDADE
+   Modo noturno | Alto contraste | Leitura | Espaçamento
+   Cards horizontais | Responsividade
+   ===================================================== */
+
+/* =====================================================
+   1. FOCO E NAVEGAÇÃO POR TECLADO
+   ===================================================== */
+
 :focus-visible {
-  outline: 3px solid #1a73e8 !important;
-  outline-offset: 3px !important;
+    outline: 3px solid #1688ff !important;
+    outline-offset: 3px !important;
 }
-main:focus { outline: none !important; }
 
-/* ---------- link "pular para o conteúdo" ---------- */
-.lex-pular {
-  position: fixed;
-  top: -100px;
-  left: 8px;
-  z-index: 100000;
-  padding: 12px 18px;
-  background: #000;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: underline;
-  border-radius: 0 0 8px 8px;
-  transition: top 0.15s;
+main:focus {
+    outline: none !important;
 }
-.lex-pular:focus { top: 0; }
 
-/* ---------- painel (fica no rodapé) ---------- */
+.lex-pular,
+.lex-pular-conteudo {
+    position: fixed;
+    top: -100px;
+    left: 12px;
+    z-index: 100000;
+    padding: 12px 18px;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+    border-radius: 0 0 8px 8px;
+    transition: top .15s ease;
+}
+
+.lex-pular:focus,
+.lex-pular-conteudo:focus {
+    top: 0;
+}
+
+/* =====================================================
+   2. PAINEL DE ACESSIBILIDADE
+   ===================================================== */
+
 .lex-acessibilidade {
-  grid-column: 1 / -1;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 24px auto 0;
-  padding: 24px;
-  background: #fff;
-  color: #1a1a1a;
-  border: 1px solid #d0d5dd;
-  border-radius: 12px;
-}
-.lex-acessibilidade h2 {
-  margin: 0 0 4px;
-  font-size: 1.25rem;
-  color: #1a1a1a;
-}
-.lex-acessibilidade p {
-  margin: 0 0 16px;
-  color: #444;
-}
-.lex-acessibilidade-botoes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-}
-.lex-ac-btn,
-.lex-ac-restaurar {
-  min-height: 48px; /* alvo de toque confortável */
-  padding: 10px 14px;
-  font: inherit;
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  background: #fff;
-  border: 2px solid #1a1a1a;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.lex-ac-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
-}
-.lex-ac-btn:hover,
-.lex-ac-restaurar:hover { background: #eef1f4; }
-.lex-ac-btn[aria-pressed="true"] {
-  background: #1a1a1a;
-  color: #fff;
-}
-.lex-ac-icone {
-  min-width: 1.8em;
-  font-weight: 700;
-  text-align: center;
-}
-.lex-ac-restaurar {
-  grid-column: 1 / -1;
-  font-weight: 600;
-}
-.lex-ac-status {
-  min-height: 1.5em;
-  margin: 12px 0 0 !important;
-  font-size: 0.9rem;
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 24px auto 0;
+    padding: 22px;
+    background: #f4f4f4;
+    color: #17212b;
+    border: 1px solid #d0d5dd;
+    border-radius: 12px;
 }
 
-/* ---------- botão flutuante ---------- */
+.lex-acessibilidade *,
+.lex-acessibilidade *::before,
+.lex-acessibilidade *::after {
+    box-sizing: border-box;
+}
+
+.lex-acessibilidade-intro {
+    margin: 0 0 16px;
+}
+
+.lex-acessibilidade-intro h2 {
+    margin: 0 0 6px;
+    color: inherit;
+    font-size: 1.25rem;
+}
+
+.lex-acessibilidade-intro p {
+    margin: 0;
+    color: inherit;
+}
+
+/* =====================================================
+   3. CARDS HORIZONTAIS
+   Vários controles por linha, sem botões gigantes
+   ===================================================== */
+
+.lex-acessibilidade .lex-acessibilidade-botoes {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Cada recurso ocupa somente o espaço necessário */
+
+.lex-acessibilidade .lex-ac-btn {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    min-height: 40px;
+    margin: 0;
+    padding: 8px 11px;
+
+    background: #fff;
+    color: #17212b;
+    border: 1px solid #c6cdd4;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    white-space: nowrap;
+
+    cursor: pointer;
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+}
+
+.lex-acessibilidade .lex-ac-btn:hover {
+    background: #edf6ff;
+    border-color: #1676cc;
+}
+
+.lex-acessibilidade .lex-ac-btn:active {
+    transform: translateY(1px);
+}
+
+/* Estado ativo */
+
+.lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
+    background: #17212b;
+    color: #fff;
+    border-color: #17212b;
+}
+
+/* Símbolos originais do HTML */
+
+.lex-acessibilidade .lex-ac-icone {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 18px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Restaurar configurações */
+
+.lex-acessibilidade .lex-ac-restaurar {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 40px;
+    margin: 0;
+    padding: 8px 12px;
+
+    background: #e8edf2;
+    color: #17212b;
+    border: 1px solid #c6cdd4;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    cursor: pointer;
+}
+
+.lex-acessibilidade .lex-ac-restaurar:hover {
+    background: #dce5ed;
+    border-color: #1676cc;
+}
+
+/* Mensagens de estado */
+
+.lex-acessibilidade .lex-ac-status {
+    min-height: 1.4em;
+    margin: 12px 0 0;
+    color: inherit;
+    font-size: .9rem;
+}
+
+/* =====================================================
+   4. BOTÃO FLUTUANTE
+   ===================================================== */
+
 .lex-ac-flutuante {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 9998;
-  min-height: 48px;
-  padding: 0 18px;
-  font: inherit;
-  font-weight: 600;
-  color: #fff;
-  background: #1a1a1a;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  cursor: pointer;
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 9998;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 48px;
+    padding: 0 18px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #fff;
+    background: #17212b;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+
+    cursor: pointer;
 }
 
-/* ---------- espaçamento do texto (WCAG 1.4.12) ---------- */
-html.lex-espacamento body *:not(svg):not(svg *) {
-  line-height: 1.8 !important;
-  letter-spacing: 0.12em !important;
-  word-spacing: 0.16em !important;
-}
-html.lex-espacamento p { margin-bottom: 2em !important; }
-
-/* ---------- destacar links ---------- */
-html.lex-links a {
-  text-decoration: underline !important;
-  text-decoration-thickness: 2px !important;
-  text-underline-offset: 4px !important;
-  outline: 2px dashed currentColor;
-  outline-offset: 3px;
+.lex-ac-flutuante:hover {
+    background: #263d50;
 }
 
-/* ---------- modo noturno ----------
- * Inverte as cores da página inteira e desfaz a inversão nas fotos,
- * para elas manterem a aparência original.
- */
-html.lex-noturno {
-  background: #fff;
-  filter: invert(1) hue-rotate(180deg);
-}
-html.lex-noturno img,
-html.lex-noturno video,
-html.lex-noturno iframe,
-html.lex-noturno .slide,
-html.lex-noturno [vw] {
-  filter: invert(1) hue-rotate(180deg);
-}
-/* ícones escuros devem clarear junto com o fundo */
-html.lex-noturno .imagens,
-html.lex-noturno .buscar img {
-  filter: none;
+/* =====================================================
+   5. MODO NOTURNO — PÁGINA INTEIRA
+   Fundo uniforme e textos legíveis.
+   Preserva o carrossel e as imagens.
+   ===================================================== */
+
+/* Fundo principal */
+
+html.lex-noturno,
+html.lex-noturno body {
+    background-color: #101820 !important;
+    color: #f1f5f9 !important;
 }
 
-/* ---------- alto contraste ---------- */
-html.lex-contraste body,
-html.lex-contraste body *:not(svg):not(svg *):not(img):not([vw]):not([vw] *) {
-  background-color: #000 !important;
-  background-image: none !important;
-  color: #fff !important;
-  border-color: #fff !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
+/* Áreas estruturais: cabeçalho, conteúdo e rodapé */
+
+html.lex-noturno body header,
+html.lex-noturno body nav,
+html.lex-noturno body main,
+html.lex-noturno body footer,
+html.lex-noturno body section:not(.lex-carousel),
+html.lex-noturno body article,
+html.lex-noturno body aside,
+html.lex-noturno body .container,
+html.lex-noturno body .container-fluid,
+html.lex-noturno body .conteudo,
+html.lex-noturno body .conteudo-principal,
+html.lex-noturno body .apresentacao-tais,
+html.lex-noturno body .servicos-section,
+html.lex-noturno body .secao-noticias,
+html.lex-noturno body .secao-duvida,
+html.lex-noturno body .duvida-layout-flex,
+html.lex-noturno body .duvida-container,
+html.lex-noturno body .duvida-texto,
+html.lex-noturno body .perguntas-frequentes,
+html.lex-noturno body .banner-fundo,
+html.lex-noturno body .banner-texto-topo,
+html.lex-noturno body .noticias-container,
+html.lex-noturno body .noticias-header,
+html.lex-noturno body .noticias-grid,
+html.lex-noturno body .container-card,
+html.lex-noturno body .center,
+html.lex-noturno body .texto_centro {
+    background-color: #101820 !important;
+    color: #f1f5f9 !important;
 }
+
+/* Elementos internos transparentes para evitar
+   manchas e blocos brancos dentro das seções */
+
+html.lex-noturno body main > section:not(.lex-carousel) *:not(img):not(video):not(iframe):not(svg):not(svg *) {
+    color: #f1f5f9;
+}
+
+/* Cartões, perguntas e conteúdo de notícias */
+
+html.lex-noturno body .card-item,
+html.lex-noturno body .noticia-card,
+html.lex-noturno body .noticia-conteudo,
+html.lex-noturno body .form-duvida,
+html.lex-noturno body .grupo-input,
+html.lex-noturno body .faq-item,
+html.lex-noturno body .card,
+html.lex-noturno body .artigo-card,
+html.lex-noturno body .artigo-conteudo {
+    background-color: #101820 !important;
+    color: #f1f5f9 !important;
+    border-color: #405463 !important;
+    box-shadow: none;
+}
+
+/* Títulos e textos das áreas principais */
+
+html.lex-noturno body h1:not(.lex-carousel *),
+html.lex-noturno body h2:not(.lex-carousel *),
+html.lex-noturno body h3:not(.lex-carousel *),
+html.lex-noturno body h4:not(.lex-carousel *),
+html.lex-noturno body h5:not(.lex-carousel *),
+html.lex-noturno body h6:not(.lex-carousel *),
+html.lex-noturno body p:not(.lex-carousel *),
+html.lex-noturno body li:not(.lex-carousel *),
+html.lex-noturno body label:not(.lex-carousel *),
+html.lex-noturno body small:not(.lex-carousel *) {
+    color: #f1f5f9;
+}
+
+/* Links */
+
+html.lex-noturno body a:not(.lex-carousel a) {
+    color: #8ecbff;
+}
+
+html.lex-noturno body a:not(.lex-carousel a):hover {
+    color: #c2e4ff;
+}
+
+/* Ícones SVG: preserva o preenchimento existente quando possível */
+
+html.lex-noturno body svg {
+    color: inherit;
+}
+
+/* Formulários */
+
+html.lex-noturno body input:not([type="checkbox"]):not([type="radio"]),
+html.lex-noturno body textarea,
+html.lex-noturno body select {
+    background-color: #182631 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #607586 !important;
+}
+
+html.lex-noturno body input::placeholder,
+html.lex-noturno body textarea::placeholder {
+    color: #c1ccd5 !important;
+    opacity: 1;
+}
+
+/* Botões comuns */
+
+html.lex-noturno body button:not(.lex-ac-flutuante),
+html.lex-noturno body .btn,
+html.lex-noturno body [class*="btn-"] {
+    border-color: #607586;
+}
+
+/* Botões importantes podem preservar o próprio fundo
+   quando possuem identidade visual específica */
+
+html.lex-noturno body .btn-enviar-duvida {
+    color: #fff !important;
+}
+
+/* Rodapé */
+
+html.lex-noturno body footer {
+    background-color: #101820 !important;
+    color: #f1f5f9 !important;
+}
+
+/* Painel de acessibilidade no modo noturno */
+
+html.lex-noturno body .lex-acessibilidade {
+    background-color: #101820 !important;
+    color: #f1f5f9 !important;
+    border-color: #405463 !important;
+}
+
+html.lex-noturno body .lex-acessibilidade h2,
+html.lex-noturno body .lex-acessibilidade p {
+    color: #f1f5f9 !important;
+}
+
+html.lex-noturno body .lex-acessibilidade .lex-ac-btn,
+html.lex-noturno body .lex-acessibilidade .lex-ac-restaurar {
+    background-color: #182631 !important;
+    color: #f1f5f9 !important;
+    border-color: #607586 !important;
+}
+
+html.lex-noturno body .lex-acessibilidade .lex-ac-btn:hover,
+html.lex-noturno body .lex-acessibilidade .lex-ac-restaurar:hover {
+    background-color: #243b4b !important;
+}
+
+html.lex-noturno body .lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
+    background-color: #30485a !important;
+    color: #fff !important;
+}
+
+/* Botão flutuante no modo noturno */
+
+html.lex-noturno body .lex-ac-flutuante {
+    background-color: #182631 !important;
+    color: #fff !important;
+    border-color: #607586 !important;
+}
+
+/* Preserva imagens e mídia */
+
+html.lex-noturno body img,
+html.lex-noturno body video,
+html.lex-noturno body iframe,
+html.lex-noturno body picture,
+html.lex-noturno body canvas {
+    filter: none !important;
+}
+
+/* O carrossel fica fora das regras de fundo do modo noturno.
+   Não aplicar inversão, filtro ou mudança de cor aos slides. */
+
+/* =====================================================
+   6. ALTO CONTRASTE — PÁGINA INTEIRA
+   Fundo preto, textos brancos, links amarelos.
+   ===================================================== */
+
+html.lex-contraste,
+html.lex-contraste body {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+/* Todos os elementos da página em alto contraste */
+
+html.lex-contraste body *:not(img):not(video):not(iframe):not([vw]):not([vw] *) {
+    background-color: #000 !important;
+    background-image: none !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* Pseudoelementos decorativos */
+
 html.lex-contraste body *::before,
 html.lex-contraste body *::after {
-  background-image: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
 }
-html.lex-contraste a,
-html.lex-contraste a * {
-  color: #ffff00 !important;
-  text-decoration: underline !important;
+
+/* Links amarelos */
+
+html.lex-contraste body a,
+html.lex-contraste body a * {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
 }
-html.lex-contraste button,
-html.lex-contraste .cta,
-html.lex-contraste [class*="btn"],
-html.lex-contraste input,
-html.lex-contraste textarea {
-  border: 2px solid #fff !important;
+
+/* Controles com bordas visíveis */
+
+html.lex-contraste body button,
+html.lex-contraste body .cta,
+html.lex-contraste body [class*="btn"],
+html.lex-contraste body input,
+html.lex-contraste body textarea,
+html.lex-contraste body select {
+    border: 2px solid #fff !important;
 }
-html.lex-contraste ::placeholder { color: #ccc !important; }
-html.lex-contraste svg,
-html.lex-contraste svg * { fill: #ffff00 !important; }
-html.lex-contraste .imagens,
-html.lex-contraste .buscar img { filter: invert(1); }
-html.lex-contraste :focus-visible { outline-color: #ffff00 !important; }
-html.lex-contraste .lex-ac-btn[aria-pressed="true"] {
-  background-color: #fff !important;
-  color: #000 !important;
+
+/* Texto auxiliar dos campos */
+
+html.lex-contraste body ::placeholder {
+    color: #ccc !important;
+    opacity: 1;
+}
+
+/* Ícones */
+
+html.lex-contraste body svg,
+html.lex-contraste body svg * {
+    fill: #ffff00 !important;
+}
+
+/* Imagens de ícones específicos */
+
+html.lex-contraste body .imagens,
+html.lex-contraste body .buscar img {
+    filter: invert(1);
+}
+
+/* Foco amarelo */
+
+html.lex-contraste body :focus-visible {
+    outline-color: #ffff00 !important;
+}
+
+/* Painel no alto contraste */
+
+html.lex-contraste body .lex-acessibilidade {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+html.lex-contraste body .lex-acessibilidade h2,
+html.lex-contraste body .lex-acessibilidade p {
+    color: #fff !important;
+}
+
+html.lex-contraste body .lex-acessibilidade .lex-ac-btn,
+html.lex-contraste body .lex-acessibilidade .lex-ac-restaurar {
+    background: #000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #fff !important;
+}
+
+html.lex-contraste body .lex-acessibilidade .lex-ac-btn:hover,
+html.lex-contraste body .lex-acessibilidade .lex-ac-restaurar:hover {
+    background: #222 !important;
+}
+
+html.lex-contraste body .lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #ffff00 !important;
+}
+
+/* Botão flutuante no alto contraste */
+
+html.lex-contraste body .lex-ac-flutuante {
+    background: #000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #fff !important;
+}
+
+/* =====================================================
+   7. ESPAÇAMENTO DE LEITURA
+   WCAG 1.4.12
+   ===================================================== */
+
+html.lex-espacamento body p,
+html.lex-espacamento body li,
+html.lex-espacamento body label {
+    line-height: 1.9 !important;
+    letter-spacing: .04em !important;
+    word-spacing: .12em !important;
+}
+
+html.lex-espacamento body p {
+    margin-bottom: 1.5em;
+}
+
+/* =====================================================
+   8. DESTAQUE DE LINKS
+   ===================================================== */
+
+html.lex-links body a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px !important;
+}
+
+/* =====================================================
+   9. RESPONSIVIDADE DOS CONTROLES
+   ===================================================== */
+
+@media (max-width: 800px) {
+    .lex-acessibilidade {
+        padding: 18px;
+    }
+
+    .lex-acessibilidade .lex-acessibilidade-botoes {
+        gap: 8px;
+    }
+
+    .lex-acessibilidade .lex-ac-btn,
+    .lex-acessibilidade .lex-ac-restaurar {
+        min-height: 40px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lex-acessibilidade {
+        padding: 14px;
+    }
+
+    .lex-acessibilidade .lex-acessibilidade-botoes {
+        gap: 7px;
+    }
+
+    .lex-acessibilidade .lex-ac-btn {
+        padding: 8px;
+        gap: 5px;
+        font-size: 11px;
+        white-space: normal;
+    }
+
+    .lex-acessibilidade .lex-ac-icone {
+        min-width: 16px;
+        font-size: 14px;
+    }
+
+    .lex-acessibilidade .lex-ac-restaurar {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   10. REDUÇÃO DE MOVIMENTO
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .lex-acessibilidade .lex-ac-btn,
+    .lex-acessibilidade .lex-ac-restaurar,
+    .lex-ac-flutuante,
+    .lex-pular,
+    .lex-pular-conteudo {
+        transition: none !important;
+        animation: none !important;
+    }
 }
