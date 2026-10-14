@@ -10,12 +10,10 @@
 
     position: relative;
     isolation: isolate;
-    width: calc(100% - 32px);
-    max-width: 1450px;
-    margin: 30px auto 20px;
+    width: calc 100%;
+    margin: 0px auto 0;
     overflow: hidden;
     border: 1px solid rgb(9 28 43 / 8%);
-    border-radius: 18px;
     background: #10283d;
     color: var(--lex-white);
     font-family: "DM Sans", Arial, sans-serif;
@@ -304,9 +302,8 @@
 
 @media (max-width: 600px) {
     .lex-carousel {
-        width: calc(100% - 24px);
-        margin-top: 12px;
-        border-radius: 12px;
+        width:100% 
+    
     }
 
     .lex-carousel .slides,

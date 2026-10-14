@@ -10,6 +10,7 @@
     background:
         radial-gradient(circle at 85% 25%, rgb(165 138 93 / 10%), transparent 27rem),
         var(--cor-fundo);
+    padding-top: 100px;
 }
 
 .apresentacao-container {

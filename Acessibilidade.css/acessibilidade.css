@@ -1,0 +1,182 @@
+/* Acessibilidade LexWeb */
+
+/* ---------- foco visível para quem usa teclado ---------- */
+:focus-visible {
+  outline: 3px solid #1a73e8 !important;
+  outline-offset: 3px !important;
+}
+main:focus { outline: none !important; }
+
+/* ---------- link "pular para o conteúdo" ---------- */
+.lex-pular {
+  position: fixed;
+  top: -100px;
+  left: 8px;
+  z-index: 100000;
+  padding: 12px 18px;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.15s;
+}
+.lex-pular:focus { top: 0; }
+
+/* ---------- painel (fica no rodapé) ---------- */
+.lex-acessibilidade {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 24px auto 0;
+  padding: 24px;
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+}
+.lex-acessibilidade h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+}
+.lex-acessibilidade p {
+  margin: 0 0 16px;
+  color: #444;
+}
+.lex-acessibilidade-botoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.lex-ac-btn,
+.lex-ac-restaurar {
+  min-height: 48px; /* alvo de toque confortável */
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.lex-ac-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.lex-ac-btn:hover,
+.lex-ac-restaurar:hover { background: #eef1f4; }
+.lex-ac-btn[aria-pressed="true"] {
+  background: #1a1a1a;
+  color: #fff;
+}
+.lex-ac-icone {
+  min-width: 1.8em;
+  font-weight: 700;
+  text-align: center;
+}
+.lex-ac-restaurar {
+  grid-column: 1 / -1;
+  font-weight: 600;
+}
+.lex-ac-status {
+  min-height: 1.5em;
+  margin: 12px 0 0 !important;
+  font-size: 0.9rem;
+}
+
+/* ---------- botão flutuante ---------- */
+.lex-ac-flutuante {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9998;
+  min-height: 48px;
+  padding: 0 18px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #1a1a1a;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+/* ---------- espaçamento do texto (WCAG 1.4.12) ---------- */
+html.lex-espacamento body *:not(svg):not(svg *) {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+html.lex-espacamento p { margin-bottom: 2em !important; }
+
+/* ---------- destacar links ---------- */
+html.lex-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  outline: 2px dashed currentColor;
+  outline-offset: 3px;
+}
+
+/* ---------- modo noturno ----------
+ * Inverte as cores da página inteira e desfaz a inversão nas fotos,
+ * para elas manterem a aparência original.
+ */
+html.lex-noturno {
+  background: #fff;
+  filter: invert(1) hue-rotate(180deg);
+}
+html.lex-noturno img,
+html.lex-noturno video,
+html.lex-noturno iframe,
+html.lex-noturno .slide,
+html.lex-noturno [vw] {
+  filter: invert(1) hue-rotate(180deg);
+}
+/* ícones escuros devem clarear junto com o fundo */
+html.lex-noturno .imagens,
+html.lex-noturno .buscar img {
+  filter: none;
+}
+
+/* ---------- alto contraste ---------- */
+html.lex-contraste body,
+html.lex-contraste body *:not(svg):not(svg *):not(img):not([vw]):not([vw] *) {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html.lex-contraste body *::before,
+html.lex-contraste body *::after {
+  background-image: none !important;
+}
+html.lex-contraste a,
+html.lex-contraste a * {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+html.lex-contraste button,
+html.lex-contraste .cta,
+html.lex-contraste [class*="btn"],
+html.lex-contraste input,
+html.lex-contraste textarea {
+  border: 2px solid #fff !important;
+}
+html.lex-contraste ::placeholder { color: #ccc !important; }
+html.lex-contraste svg,
+html.lex-contraste svg * { fill: #ffff00 !important; }
+html.lex-contraste .imagens,
+html.lex-contraste .buscar img { filter: invert(1); }
+html.lex-contraste :focus-visible { outline-color: #ffff00 !important; }
+html.lex-contraste .lex-ac-btn[aria-pressed="true"] {
+  background-color: #fff !important;
+  color: #000 !important;
+}
