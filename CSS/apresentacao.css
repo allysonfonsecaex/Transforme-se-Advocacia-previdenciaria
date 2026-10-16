@@ -1,0 +1,256 @@
+
+/* =========================================================
+   APRESENTACAO DA TAIS
+   ========================================================= */
+
+.apresentacao-tais {
+    width: 100%;
+    padding: var(--espaco-secao) 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 25%, rgb(165 138 93 / 10%), transparent 27rem),
+        var(--cor-fundo);
+    padding-top: 100px;
+}
+
+.apresentacao-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    align-items: center;
+    gap: clamp(36px, 6vw, 76px);
+    width: 100%;
+    max-width: var(--largura-conteudo);
+    min-height: 440px;
+    margin: 0 auto;
+}
+
+.apresentacao-conteudo {
+    max-width: 620px;
+}
+
+.apresentacao-etiqueta {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--cor-dourado-escuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+}
+
+.apresentacao-conteudo h1 {
+    margin: 0 0 22px;
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(2.25rem, 4.2vw, 3.7rem);
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: -0.035em;
+}
+
+.apresentacao-conteudo h1 span {
+    display: block;
+    color: var(--cor-dourado-escuro);
+}
+
+.apresentacao-descricao {
+    max-width: 550px;
+    margin: 0 0 28px;
+    color: var(--cor-texto-suave);
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.8;
+}
+
+.apresentacao-acoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 22px;
+}
+
+.botao-apresentacao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 13px 22px;
+    border: 2px solid var(--cor-marinho);
+    border-radius: 8px;
+    background: var(--cor-marinho);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 180ms ease,
+                color 180ms ease,
+                transform 180ms ease;
+}
+
+.botao-apresentacao:hover {
+    background: transparent;
+    color: var(--cor-marinho);
+    transform: translateY(-2px);
+}
+
+.link-apresentacao {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--cor-marinho);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.apresentacao-destaque {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.destaque-linha {
+    flex: 0 0 3px;
+    border-radius: 4px;
+    background: var(--cor-dourado);
+}
+
+.apresentacao-destaque p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+/* FOTO DA TAIS */
+.apresentacao-imagem-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+    justify-self: end;
+}
+
+.apresentacao-imagem {
+    display: block;
+    width: 100%;
+    height: 490px;
+    border-radius: 190px 190px 12px 12px;
+    background: #e4ded2;
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0 18px 45px rgb(9 28 43 / 12%);
+}
+
+.apresentacao-assinatura {
+    position: absolute;
+    right: -12px;
+    bottom: 24px;
+    width: min(270px, 86%);
+    padding: 17px 20px;
+    border-left: 4px solid var(--cor-dourado);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: var(--sombra-card);
+}
+
+.apresentacao-assinatura span {
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.apresentacao-assinatura p {
+    margin: 4px 0 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .apresentacao-container {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
+        gap: 30px;
+    }
+
+    .apresentacao-imagem {
+        height: 410px;
+    }
+
+    .apresentacao-acoes {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    .apresentacao-tais {
+        padding: 46px 20px 54px;
+    }
+
+    .apresentacao-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 34px;
+        min-height: auto;
+    }
+
+    .apresentacao-conteudo h1 {
+        font-size: clamp(2.1rem, 8vw, 2.8rem);
+    }
+
+    .apresentacao-descricao {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .apresentacao-acoes {
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .botao-apresentacao {
+        width: 100%;
+    }
+
+    .link-apresentacao {
+        align-self: flex-start;
+    }
+
+    .apresentacao-imagem-container {
+        width: min(100%, 380px);
+        justify-self: center;
+    }
+
+    .apresentacao-imagem {
+        height: auto;
+        aspect-ratio: 4 / 4.2;
+        border-radius: 130px 130px 12px 12px;
+        object-position: center 25%;
+    }
+
+    .apresentacao-assinatura {
+        right: 8px;
+        bottom: 12px;
+        width: auto;
+        max-width: 82%;
+        padding: 13px 16px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 380px) {
+    .apresentacao-tais {
+        padding-inline: 16px;
+    }
+
+    .apresentacao-assinatura span {
+        font-size: 1rem;
+    }
+}

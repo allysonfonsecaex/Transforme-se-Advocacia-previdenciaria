@@ -1,80 +1,407 @@
 
-.Carrosel-container {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+
+
+.lex-carousel {
+    --lex-navy: #091c2b;
+    --lex-blue: #b18b4f;
+    --lex-white: #ffffff;
+    --lex-muted: #e1e8ee;
+
     position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    isolation: isolate;
+    width: calc 100%;
+    margin: 0px auto 0;
     overflow: hidden;
+    border: 1px solid rgb(9 28 43 / 8%);
+    background: #10283d;
+    color: var(--lex-white);
+    font-family: "DM Sans", Arial, sans-serif;
     
 }
 
-.banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+.lex-carousel *,
+.lex-carousel *::before,
+.lex-carousel *::after {
+    box-sizing: border-box;
 }
 
-.anterior, .proximo {
+.lex-carousel .slides {
+    position: relative;
+    min-height: 530px;
+}
+
+.lex-carousel .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    min-height: 530px;
+    padding: clamp(36px, 7vw, 100px);
+    background-image:
+        linear-gradient(90deg, rgb(5 22 39 / 96%) 0%, rgb(5 22 39 / 86%) 42%, rgb(5 22 39 / 38%) 78%, rgb(5 22 39 / 25%) 100%),
+        var(--bg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.02);
+    transition: opacity 500ms ease, transform 700ms ease, visibility 500ms;
+    pointer-events: none;
+
+}
+
+.lex-carousel .slide.active {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.lex-carousel .slide-content {
+    width: 100%;
+    max-width: 700px;
+    animation: lex-carousel-enter 550ms ease both;
+}
+
+.lex-carousel .eyebrow {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 9px 13px;
+    border: 1px solid rgb(255 255 255 / 34%);
+    border-radius: 999px;
+    color: #f1d9ad;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+}
+
+.lex-carousel .slide h1,
+.lex-carousel .slide h2 {
+    max-width: 720px;
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(2.2rem, 4.6vw, 4.15rem);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+}
+
+.lex-carousel .slide h1 span,
+.lex-carousel .slide h2 span {
+    color: #e0c18b;
+}
+
+.lex-carousel .slide p {
+    max-width: 560px;
+    margin: 0 0 28px;
+    color: var(--lex-muted);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.8;
+}
+
+.lex-carousel .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 52px;
+    padding: 13px 20px;
+    border: 2px solid #e0c18b;
+    border-radius: 7px;
+    background: #e0c18b;
+    color: #091c2b;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.lex-carousel .cta span {
+    font-size: 1.35rem;
+    transition: transform 180ms ease;
+}
+
+.lex-carousel .cta:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: #ffffff;
+}
+
+.lex-carousel .cta:hover span {
+    transform: translateX(3px);
+}
+
+.lex-carousel .arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background: rgba(9, 28, 43, 0.8);
-    color: #FFD700;
-    border: 1px solid #FFD700;
-    padding: 10px 14px;
-    cursor: pointer;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgb(255 255 255 / 55%);
     border-radius: 50%;
-    font-size: 1.2rem;
-    z-index: 5;
-    transition: background-color 0.3s;
+    background: rgb(7 25 42 / 72%);
+    color: #ffffff;
+    font-size: 1.9rem;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 180ms ease, border-color 180ms ease;
 }
 
-.anterior { 
-    left: 20px; 
+.lex-carousel .arrow:hover {
+    border-color: #e0c18b;
+    background: #80663f;
 }
 
-.proximo { 
-    right: 20px; 
-}
+.lex-carousel .prev { left: 18px; }
+.lex-carousel .next { right: 18px; }
 
-.anterior:hover, .proximo:hover {
-    background: rgba(9, 28, 43, 1);
-}
-
-.btn-contato 
-{
+.lex-carousel .carousel-bottom {
     position: absolute;
-    bottom: 8%;
-    right: 8%;
-    background-color: #091C2B;
-    color: #FFFFFF;
-    padding: 12px 28px;
+    right: 30px;
+    bottom: 22px;
+    left: 30px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.lex-carousel .indicators {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    pointer-events: auto;
+}
+
+.lex-carousel .dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 1px solid rgb(255 255 255 / 65%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 45%);
+    cursor: pointer;
+    transition: width 180ms ease, background-color 180ms ease;
+}
+
+.lex-carousel .dot.active {
+    width: 28px;
+    background: #e0c18b;
+    border-color: #e0c18b;
+}
+
+.lex-carousel .counter {
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.lex-carousel button:focus-visible,
+.lex-carousel a:focus-visible {
+    outline: 3px solid #f1d9ad;
+    outline-offset: 4px;
+}
+
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: calc(100% - 44px);
+    max-width: 1350px;
+    margin: 24px auto 0;
+    color: #ffffff;
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+.features *,
+.features *::before,
+.features *::after {
+    box-sizing: border-box;
+}
+
+.features article {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgb(9 28 43 / 8%);
+    border-radius: 12px;
+    background: var(--cor-marinho);
+    box-shadow: 0 6px 18px rgb(9 28 43 / 8%);
+}
+
+.features .feature-icon {
+    display: grid;
+    flex: 0 0 46px;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgb(224 193 139 / 45%);
+    border-radius: 50%;
+    color: #e0c18b;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.features .feature-content {
+    min-width: 0;
+}
+
+.features h3 {
+    margin: 0 0 5px;
+    color: #ffffff;
     font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
-    border: 2px solid #FFD700;
-    transition: transform 0.2s, background-color 0.2s;
-    z-index: 5;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
-.btn-contato:hover {
-    background-color: #13334c;
-    transform: scale(1.05);
-
+.features p {
+    margin: 0;
+    color: #d2dce5;
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-    .btn-contato {
-        bottom: 10%;
-        right: 5%;
-        padding: 6px 14px;
-        font-size: 0.75rem;
+@keyframes lex-carousel-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .lex-carousel .slides,
+    .lex-carousel .slide {
+        min-height: 500px;
     }
 
-    .anterior, .proximo {
-        padding: 6px 10px;
-        font-size: 0.9rem;
+    .lex-carousel .slide {
+        padding: 48px 58px 86px;
+        background-image:
+            linear-gradient(90deg, rgb(5 22 39 / 94%), rgb(5 22 39 / 78%)),
+            var(--bg);
+    }
+
+    .features {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 600px) {
+    .lex-carousel {
+        width:100% 
+    
+    }
+
+    .lex-carousel .slides,
+    .lex-carousel .slide {
+        min-height: 500px;
+    }
+
+    .lex-carousel .slide {
+        padding: 38px 22px 88px;
+    }
+
+    .lex-carousel .slide h1,
+    .lex-carousel .slide h2 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        letter-spacing: -0.025em;
+    }
+
+    .lex-carousel .eyebrow {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: 0.68rem;
+        letter-spacing: 0.07em;
+    }
+
+    .lex-carousel .slide p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .lex-carousel .cta {
+        max-width: 100%;
+        gap: 9px;
+        padding: 12px 15px;
+        font-size: 0.92rem;
+    }
+
+    .lex-carousel .arrow {
+        top: auto;
+        bottom: 16px;
+        width: 42px;
+        height: 42px;
+        transform: none;
+    }
+
+    .lex-carousel .prev { left: 12px; }
+    .lex-carousel .next { right: 12px; }
+
+    .lex-carousel .carousel-bottom {
+        right: 66px;
+        bottom: 30px;
+        left: 66px;
+        justify-content: center;
+    }
+
+    .lex-carousel .counter {
+        display: none;
+    }
+
+    .features {
+        width: calc(100% - 32px);
+        margin-top: 16px;
+    }
+
+    .features article {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .lex-carousel .slide {
+        padding-inline: 17px;
+    }
+
+    .lex-carousel .slide h1,
+    .lex-carousel .slide h2 {
+        font-size: 1.85rem;
+    }
+
+    .features .feature-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lex-carousel .slide,
+    .lex-carousel .slide-content,
+    .lex-carousel .cta,
+    .lex-carousel .cta span,
+    .lex-carousel .arrow,
+    .lex-carousel .dot {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .lex-carousel .slide-content {
+        opacity: 1;
+        transform: none;
     }
 }

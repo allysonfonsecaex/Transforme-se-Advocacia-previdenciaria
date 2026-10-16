@@ -1,83 +1,173 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+:root {
+    color-scheme: light;
+    --cor-marinho: #091c2b;
+    --cor-marinho-claro: #12334a;
+    --cor-dourado: #a58a5d;
+    --cor-dourado-escuro: #80663f;
+    --cor-fundo: #f7f4ee;
+    --cor-superficie: #ffffff;
+    --cor-superficie-suave: #f2f4f6;
+    --cor-texto: #25313a;
+    --cor-texto-suave: #505c65;
+    --cor-borda: #d9dfe4;
+    --sombra-suave: 0 8px 28px rgb(9 28 43 / 8%);
+    --sombra-card: 0 12px 34px rgb(9 28 43 / 10%);
+    --raio-card: 14px;
+    --largura-conteudo: 1200px;
+    --espaco-secao: clamp(48px, 7vw, 88px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
 }
 
 body {
-  font-family:  sans-serif;
-  overflow-x: hidden;
+    min-width: 320px;
+    margin: 0;
+    color: var(--cor-texto);
+    background: var(--cor-superficie);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
 }
 
 main {
-  display: flex;
-  justify-content: center;
+    display: block;
+    width: 100%;
 }
+
+section[id] {
+    scroll-margin-top: 24px;
+}
+
+:focus-visible {
+    outline: 3px solid #b18b4f;
+    outline-offset: 4px;
+}
+
+::selection {
+    color: #ffffff;
+    background: var(--cor-marinho-claro);
+}
+
 
 .Btn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition-duration: 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: #00d757;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    flex: 0 0 auto;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 999px;
+    background: #128c7e;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 5px 16px rgb(0 0 0 / 18%);
+    transition: width 220ms ease, background-color 220ms ease, transform 220ms ease;
 }
 
-.sign {
-  width: 100%;
-  transition-duration: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Btn .sign {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
 }
 
-.sign svg {
-  width: 25px;
+.Btn .sign svg {
+    width: 24px;
+    height: 24px;
 }
 
-.sign svg path {
-  fill: white;
+.Btn .sign svg path {
+    fill: #ffffff;
 }
 
-.text {
-  position: absolute;
-  right: 0%;
-  width: 0%;
-  opacity: 0;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  transition-duration: 0.3s;
+.Btn .text {
+    position: static;
+    width: auto;
+    padding-right: 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .Btn:hover {
-  width: 150px;
-  border-radius: 40px;
-  transition-duration: 0.3s;
-}
-
-.Btn:hover .sign {
-  width: 30%;
-  transition-duration: 0.3s;
-  padding-left: 10px;
-}
-
-.Btn:hover .text {
-  opacity: 1;
-  width: 70%;
-  transition-duration: 0.3s;
-  padding-right: 10px;
+    width: 150px;
+    background: #0d7468;
+    transform: translateY(-2px);
 }
 
 .Btn:active {
-  transform: translate(2px, 2px);
+    transform: translateY(0);
 }
 
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
 
+    .Btn {
+        width: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

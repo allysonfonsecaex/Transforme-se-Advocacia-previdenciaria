@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+   <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../PERGUNTASCSS/Perguntas.css">
+    <link rel="stylesheet" href="../PERGUNTASCSS/perguntastxt.css">
+    <link rel="stylesheet" href="../PERGUNTASCSS/barradepesquisa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<header class="Navegação">
+        <img class="Logo" src="../imagens/logo melhor.png" alt="Logo Taís Almeida Advocacia">
+      
+        <nav>
+            <div class="card">
+                <a href="../index.html">INICIO</a>
+                <a href="Sobre.html">SOBRE</a>
+                <a href="Perguntas.html">PERGUNTAS</a>
+                <a href="artigos.html">ARTIGOS</a>
+                <a href="planejamentos.html">PLANEJAMENTOS</a>
+                <a href="central.html">CENTRAL</a>
+            </div>
+            <div class="buscar" role="button" aria-label="Buscar"> 
+                <img src="../Imagens/icons8-search-24.png" alt="">
+            </div>            
+ 
+            <a href="#" class="socialContainer containerOne" aria-label="Instagram">
+                <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> 
+                </svg>
+            </a>
+            
+            <a href="#" class="socialContainer containerFour" aria-label="WhatsApp">
+                <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> 
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> 
+                </svg>
+            </a>
+        </nav> 
+    </header>
+
+    
+    
+    
+    <section class="conteudo">
+        
+    <section class="perguntas-frequentes">
+            
+        <h1>Perguntas Frequentes</h1>
+
+        <input type="text" id="pesquisa" placeholder="Digite sua dúvida..." onkeyup="pesquisar()">
+        
+
+            <div class="perguntas">
+
+                <div class="topicos">
+                    <h3>APOSENTADORIA</h3>
+
+                    <button onclick="mostrarResposta('resposta1_1')">
+                    ▶ Como saber se já posso me aposentar?
+                    </button>
+
+                    <div id="resposta1_1" class="resposta">
+                    <p>
+                    O direito à aposentadoria depende de fatores como idade, tempo de contribuição, histórico previdenciário e 
+                    regras aplicáveis ao segurado. Uma análise do CNIS e das contribuições permite verificar quais requisitos já 
+                    foram cumpridos e quais ainda faltam.
+                    </p>
+                    </div>
+
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta1_2')">
+                    ▶ O que é aposentadoria especial?
+                    </button>
+
+                    <div id="resposta1_2" class="resposta">
+                    <p>
+                    É uma modalidade destinada a trabalhadores que exerceram atividades com exposição a agentes prejudiciais à 
+                    saúde ou à integridade física, desde que atendidos os requisitos legais. Documentos como o PPP são importantes 
+                    para comprovar as condições de trabalho.
+                    </p>
+                    </div>
+
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta1_3')">
+                    ▶ Caminhoneiro pode ter direito à aposentadoria especial?
+                    </button>
+
+                    <div id="resposta1_3" class="resposta">
+                    <p>
+                    Depende das condições em que o trabalho foi realizado e da exposição a agentes nocivos. A profissão, por si só, 
+                    não garante o benefício, sendo necessário analisar o histórico profissional e os documentos que comprovem as 
+                    condições da atividade.
+                    </p>
+                    </div>
+
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta1_4')">
+                    ▶ O que é o PPP?
+                    </button>
+
+                    <div id="resposta1_4" class="resposta">
+                    <p>
+                    O Perfil Profissiográfico Previdenciário (PPP) é um documento que reúne informações sobre as atividades exercidas 
+                    pelo trabalhador e suas condições de trabalho, incluindo eventual exposição a agentes nocivos. Ele é importante 
+                    para a análise de períodos de atividade especial.
+                    </p>
+                    </div>
+
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta1_5')">
+                    ▶ Posso me aposentar por incapacidade?
+                    </button>
+
+                    <div id="resposta1_5" class="resposta">
+                    <p>
+                    A aposentadoria por incapacidade permanente pode ser concedida quando o segurado apresenta incapacidade permanente 
+                    para o trabalho e não pode ser reabilitado para outra atividade, desde que os demais requisitos sejam atendidos. 
+                    A incapacidade deve ser comprovada conforme as regras previdenciárias.
+                    </p>
+                    </div>
+
+                </div>
+
+
+                <div class="topicos">
+                    <h3>BENEFÍCIOS POR INCAPACIDADE</h3>
+
+                    <button onclick="mostrarResposta('resposta2_1')">
+                    ▶ O que é o auxílio por incapacidade temporária?
+                    </button>
+
+                    <div id="resposta2_1" class="resposta">
+                    <p>
+                    É o benefício destinado ao segurado que fica temporariamente incapaz de trabalhar por motivo de doença ou acidente. 
+                    Para sua concessão, é necessário cumprir os requisitos previdenciários e comprovar a incapacidade.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta2_2')">
+                    ▶ Preciso passar por perícia médica?
+                    </button>
+
+                    <div id="resposta2_2" class="resposta">
+                    <p>
+                    Em situações que envolvem incapacidade para o trabalho, a comprovação da condição pode exigir avaliação médica pelo INSS. 
+                    A documentação médica também é importante para demonstrar o diagnóstico, o tratamento e as limitações apresentadas.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta2_3')">
+                    ▶ O que fazer se o benefício por incapacidade for negado?
+                    </button>
+
+                    <div id="resposta2_3" class="resposta">
+                    <p>
+                    É possível analisar o motivo da negativa e verificar se existem medidas cabíveis, como recurso administrativo ou outras providências. 
+                    A documentação médica e o histórico previdenciário devem ser avaliados antes de definir a melhor estratégia.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta2_4')">
+                    ▶ Posso pedir a prorrogação do benefício?
+                    </button>
+
+                    <div id="resposta2_4" class="resposta">
+                    <p>
+                    Em determinadas situações, quando a incapacidade permanece e o benefício está próximo do fim, o segurado pode solicitar sua prorrogação conforme os procedimentos e 
+                    prazos estabelecidos pelo INSS. 
+                    É importante acompanhar a situação do benefício e manter a documentação médica atualizada.
+                    </p>
+                    </div>
+                </div>
+
+
+                <div class="topicos">
+                    <h3>PENSÃO POR MORTE</h3>
+
+                    <button onclick="mostrarResposta('resposta3_1')">
+                    ▶ Quem pode receber pensão por morte?
+                    </button>
+
+                    <div id="resposta3_1" class="resposta">
+                    <p>
+                    A pensão por morte pode ser destinada aos dependentes do segurado falecido, desde que sejam cumpridos os requisitos previstos pela legislação. 
+                    A condição do dependente e a situação previdenciária do 
+                    falecido são analisadas para verificar o direito ao benefício.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta3_2')">
+                    ▶ Cônjuge ou companheiro tem direito à pensão?
+                    </button>
+
+                    <div id="resposta3_2" class="resposta">
+                    <p>
+                    Cônjuge ou companheiro pode ter direito à pensão por morte, desde que atendidos os requisitos legais. A duração do benefício pode variar de acordo com a situação do 
+                    dependente e as regras aplicáveis ao caso.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta3_3')">
+                    ▶ Filhos têm direito à pensão por morte?
+                    </button>
+
+                    <div id="resposta3_3" class="resposta">
+                    <p>
+                    Filhos podem ter direito à pensão quando se enquadram nas condições previstas pela legislação previdenciária. A idade, eventual deficiência e outras circunstâncias 
+                    podem influenciar a existência e a duração do benefício.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta3_4')">
+                    ▶ Existe prazo para solicitar a pensão por morte?
+                    </button>
+
+                    <div id="resposta3_4" class="resposta">
+                    <p>
+                    O pedido pode ser feito após o falecimento do segurado, mas a data do requerimento pode influenciar o início do pagamento do benefício. Por isso, 
+                    é recomendável buscar orientação e reunir a documentação necessária o quanto antes.
+                    </p>
+                    </div>
+                </div>
+
+
+                <div class="topicos">
+                    <h3>BPC/LOAS</h3>
+
+                    <button onclick="mostrarResposta('resposta4_1')">
+                    ▶ Quem tem direito ao BPC/LOAS?
+                    </button>
+
+                    <div id="resposta4_1" class="resposta">
+                    <p>
+                    O BPC pode ser destinado à pessoa com deficiência ou ao idoso com 65 anos ou mais que esteja em situação de vulnerabilidade e cumpra os requisitos legais. 
+                    Diferentemente da aposentadoria, não é necessário ter contribuído ao INSS para solicitar o benefício.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta4_2')">
+                    ▶ Preciso ter contribuído para receber o BPC?
+                    </button>
+
+                    <div id="resposta4_2" class="resposta">
+                    <p>
+                    Não. O BPC é um benefício assistencial e não exige contribuições anteriores ao INSS. Entretanto, é necessário atender aos critérios 
+                    relacionados à idade ou deficiência e à situação socioeconômica do beneficiário.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta4_3')">
+                    ▶ O BPC é uma aposentadoria?
+                    </button>
+
+                    <div id="resposta4_3" class="resposta">
+                    <p>
+                    Não. O BPC é um benefício assistencial e possui regras diferentes das aposentadorias. Além disso, ele não funciona da mesma forma que uma 
+                    aposentadoria em relação a contribuições e outros direitos previdenciários.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta4_4')">
+                    ▶ O que fazer se o BPC for negado?
+                    </button>
+
+                    <div id="resposta4_4" class="resposta">
+                    <p>
+                    Primeiramente, é importante verificar o motivo da negativa e analisar se os requisitos foram corretamente avaliados.
+                    Dependendo da situação, podem existir medidas administrativas ou judiciais para contestar a decisão.
+                    </p>
+                    </div>
+                </div>
+
+
+                <div class="topicos">
+
+                    <h3>REVISÃO DE BENEFÍCIOS</h3>
+
+                    <button onclick="mostrarResposta('resposta5_1')">
+                    ▶ Quando posso pedir a revisão do meu benefício?
+                    </button>
+
+                    <div id="resposta5_1" class="resposta">
+                    <p>
+                    A revisão pode ser analisada quando existem possíveis erros na concessão ou no cálculo do benefício. 
+                    É necessário verificar o processo, o histórico de contribuições e os documentos utilizados pelo INSS para 
+                    identificar se existe alguma informação que possa ser corrigida.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta5_2')">
+                    ▶ É possível revisar uma aposentadoria?
+                    </button>
+
+                    <div id="resposta5_2" class="resposta">
+                    <p>
+                    Em determinadas situações, sim. Podem existir casos em que períodos de contribuição, salários ou outras informações 
+                    não foram considerados corretamente. A possibilidade de revisão depende da análise específica do benefício e dos prazos aplicáveis.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta5_3')">
+                    ▶ Como saber se meu benefício foi calculado corretamente?
+                    </button>
+
+                    <div id="resposta5_3" class="resposta">
+                    <p>
+                    Uma análise do processo de concessão, do CNIS e do histórico de contribuições pode ajudar a identificar possíveis inconsistências. 
+                    A partir dessa documentação, é possível verificar se o cálculo realizado pelo INSS corresponde às informações do segurado.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta5_4')">
+                    ▶ Existe prazo para pedir uma revisão?
+                    </button>
+
+                    <div id="resposta5_4" class="resposta">
+                    <p>
+                    Sim. Existem prazos previstos pela legislação para determinados pedidos de revisão de benefícios. Por isso, 
+                    é importante analisar o benefício e sua data de concessão antes de tomar qualquer medida.
+                    </p>
+                    </div>
+                </div>
+
+
+                <div class="topicos">
+
+                    <h3>CONTRIBUIÇÕES AO INSS</h3>
+
+                    <button onclick="mostrarResposta('resposta6_1')">
+                    ▶ Como posso contribuir para o INSS?
+                    </button>
+
+                    <div id="resposta6_1" class="resposta">
+                    <p>
+                    A forma de contribuição depende da situação profissional do segurado. Empregados, autônomos, contribuintes individuais, 
+                    segurados facultativos e MEIs possuem formas e regras específicas de contribuição.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta6_2')">
+                    ▶ Posso pagar contribuições do INSS em atraso?
+                    </button>
+
+                    <div id="resposta6_2" class="resposta">
+                    <p>
+                    Em algumas situações, é possível regularizar contribuições que não foram pagas no período correto. 
+                    Entretanto, as regras variam conforme a categoria do segurado e o período que se pretende regularizar, sendo importante verificar cada caso individualmente.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta6_3')">
+                    ▶ O que é o CNIS?
+                    </button>
+
+                    <div id="resposta6_3" class="resposta">
+                    <p>
+                    O Cadastro Nacional de Informações Sociais (CNIS) reúne informações relacionadas aos vínculos empregatícios, contribuições e outros dados previdenciários do segurado. 
+                    Conferir o CNIS é importante para identificar possíveis períodos ou informações que estejam incorretos ou ausentes.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta6_4')">
+                    ▶ O que acontece se houver erros no meu CNIS?
+                    </button>
+
+                    <div id="resposta6_4" class="resposta">
+                    <p>
+                    Informações incorretas ou períodos que não aparecem no CNIS podem prejudicar a análise de um benefício. Nesses casos, 
+                    pode ser necessário apresentar documentos que comprovem os vínculos ou contribuições para solicitar a correção das informações.
+                    </p>
+                    </div>
+                </div>
+
+
+                <div class="topicos">
+
+                    <h3>TRABALHADORES E DIREITOS</h3>
+
+                    <button onclick="mostrarResposta('resposta7_1')">
+                    ▶ MEI tem direito à aposentadoria?
+                    </button>
+
+                    <div id="resposta7_1" class="resposta">
+                    <p>
+                    Sim. O MEI realiza contribuição previdenciária por meio do DAS, mas as características dessa contribuição podem influenciar os benefícios 
+                    e a forma de aposentadoria disponíveis. Dependendo do objetivo previdenciário, pode ser necessário avaliar outras formas de contribuição.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta7_2')">
+                    ▶ Autônomo pode se aposentar pelo INSS?
+                    </button>
+
+                    <div id="resposta7_2" class="resposta">
+                    <p>
+                    Sim. O trabalhador autônomo pode contribuir para o INSS como contribuinte individual e, cumpridos os requisitos, ter acesso aos benefícios previdenciários. 
+                    A forma e o valor das contribuições devem ser analisados de acordo com sua situação.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta7_3')">
+                    ▶ Quem trabalha em condições insalubres pode se aposentar mais cedo?
+                    </button>
+
+                    <div id="resposta7_3" class="resposta">
+                    <p>
+                    A exposição a condições prejudiciais à saúde pode permitir o reconhecimento de atividade especial, desde que sejam atendidos os requisitos legais e comprovada a 
+                    exposição aos agentes nocivos. A análise dos documentos profissionais é fundamental.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta7_4')">
+                    ▶ Trabalhador rural tem regras diferentes?
+                    </button>
+
+                    <div id="resposta7_4" class="resposta">
+                    <p>
+                    Sim. Existem regras específicas para trabalhadores rurais, que podem variar conforme a categoria e a situação do segurado. A comprovação da 
+                    atividade rural é um dos pontos importantes 
+                    para a análise do benefício.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <h3>INSS E PROCESSOS</h3>
+
+                    <button onclick="mostrarResposta('resposta8_1')">
+                    ▶ Como faço para solicitar um benefício no INSS?
+                    </button>
+
+                    <div id="resposta8_1" class="resposta">
+                    <p>
+                    O pedido pode ser realizado pelos canais oficiais do INSS, inclusive pelo aplicativo ou site Meu INSS, dependendo do benefício. Antes de fazer o requerimento, 
+                    é importante verificar os requisitos e reunir a documentação necessária.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta8_2')">
+                    ▶ O que fazer quando o INSS demora para analisar meu pedido?
+                    </button>
+
+                    <div id="resposta8_2" class="resposta">
+                    <p>
+                    O segurado pode acompanhar o andamento da solicitação pelos canais oficiais e verificar se existe alguma pendência. Quando há demora além dos prazos aplicáveis, 
+                    pode ser necessário analisar quais medidas podem ser tomadas.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta8_3')">
+                    ▶ Preciso de um advogado para solicitar um benefício?
+                    </button>
+
+                    <div id="resposta8_3" class="resposta">
+                    <p>
+                    Nem sempre. Muitos benefícios podem ser solicitados diretamente pelo segurado. Entretanto, quando existem situações mais complexas, como negativa, 
+                    revisão, períodos não reconhecidos ou divergências no cálculo, uma análise jurídica pode ajudar a identificar os direitos envolvidos.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta8_4')">
+                    ▶ Posso recorrer de uma decisão do INSS?
+                    </button>
+
+                    <div id="resposta8_4" class="resposta">
+                    <p>
+                    Dependendo da decisão, existem meios administrativos para contestar a negativa. Também pode haver possibilidade de buscar a via judicial, 
+                    conforme as circunstâncias do caso.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <h3>DOCUMENTOS PREVIDENCIÁRIOS</h3>
+
+                    <button onclick="mostrarResposta('resposta9_1')">
+                    ▶ Quais documentos preciso para me aposentar?
+                    </button>
+
+                    <div id="resposta9_1" class="resposta">
+                    <p>
+                    A documentação depende do tipo de aposentadoria e do histórico profissional do segurado. Entre os documentos que podem ser necessários 
+                    estão documentos pessoais, CNIS, carteira de trabalho e comprovantes de contribuição ou de atividade profissional.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta9_2')">
+                    ▶ O que é o LTCAT?
+                    </button>
+
+                    <div id="resposta9_2" class="resposta">
+                    <p>
+                    O LTCAT é um documento técnico utilizado para registrar e avaliar as condições ambientais de trabalho, especialmente em relação à 
+                    exposição a agentes nocivos. Ele pode auxiliar na comprovação de atividade especial em determinadas situações.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta9_3')">
+                    ▶ Perdi minha carteira de trabalho. Ainda posso comprovar meu tempo?
+                    </button>
+
+                    <div id="resposta9_3" class="resposta">
+                    <p>
+                    A perda da carteira de trabalho não significa necessariamente que o período não possa ser comprovado. 
+                    Outros documentos e registros podem ajudar a demonstrar vínculos e períodos de trabalho, dependendo da situação.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta9_4')">
+                    ▶ Não tenho meu PPP. Posso comprovar atividade especial?
+                    </button>
+
+                    <div id="resposta9_4" class="resposta">
+                    <p>
+                    A ausência do PPP em mãos não significa automaticamente que o período não possa ser analisado. 
+                    É possível verificar a existência de outros documentos e meios de obtenção ou comprovação das condições de trabalho, conforme o caso.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="topicos">
+
+                    <h3>DÚVIDAS GERAIS</h3>
+
+                    <button onclick="mostrarResposta('resposta10_1')">
+                    ▶ Posso receber dois benefícios do INSS ao mesmo tempo?
+                    </button>
+
+                    <div id="resposta10_1" class="resposta">
+                    <p>
+                    A possibilidade depende dos benefícios envolvidos e das regras de acumulação previstas na legislação. Algumas combinações são permitidas, 
+                    enquanto outras possuem restrições ou regras específicas sobre o valor recebido.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta10_2')">
+                    ▶ Quem nunca contribuiu para o INSS pode receber algum benefício?
+                    </button>
+
+                    <div id="resposta10_2" class="resposta">
+                    <p>
+                    Em determinadas situações, sim. O principal exemplo é o BPC/LOAS, que não exige contribuições ao INSS, mas possui 
+                    requisitos específicos relacionados à idade ou deficiência e à situação socioeconômica.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta10_3')">
+                    ▶ Posso continuar trabalhando depois de me aposentar?
+                    </button>
+
+                    <div id="resposta10_3" class="resposta">
+                    <p>
+                    Em muitos casos, o aposentado pode continuar trabalhando, mas existem situações específicas, 
+                    especialmente relacionadas à aposentadoria por incapacidade e à atividade especial. Por isso, é importante 
+                    verificar as regras aplicáveis ao benefício recebido.
+                    </p>
+                    </div>
+                </div>
+                <div class="topicos">
+
+                    <button onclick="mostrarResposta('resposta10_4')">
+                    ▶ Como saber quais benefícios posso receber?
+                    </button>
+
+                    <div id="resposta10_4" class="resposta">
+                    <p>
+                    A possibilidade de receber um benefício depende do histórico de contribuições, idade, atividade profissional, 
+                    situação familiar, condições de saúde e outros fatores. Uma análise individual permite identificar quais benefícios 
+                    podem ser aplicáveis ao caso.
+                    </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        </section>
+        
+
+    </section>
+
+
+    <footer>
+        <div class="footer-coluna contato-info">
+            <h3>Contato</h3>
+            <p><strong>Taís Almeida Advocacia Previdenciária</strong></p>
+            <p>São Paulo/SP</p>
+            <p>Tel: +55 11 99999-9999</p>
+        </div>
+
+        <div class="footer-coluna mapa">
+            <h3>Mapa do site</h3>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#perguntas">Perguntas</a></li>
+                <li><a href="#atuacao">Atuação</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#planejamentos">Planejamento</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-coluna atuacao">
+            <h3>Atuação</h3>
+            <ul>
+                <li><span>Aposentadoria por Idade e Tempo</span></li>
+                <li><span>Pensão por Morte</span></li>
+                <li><span>Auxílio-Doença e BPC/LOAS</span></li>
+                <li><span>Revisão de Benefícios</span></li>
+                <li><a href="#planejamentos">Saiba mais</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-coluna noticias">
+            <h3>Últimas notícias</h3>
+            <div class="noticia-item">
+                <span class="data-noticia">07/04/2026</span>
+                <p>Muitos segurados desconhecem regras de transição da previdência</p>
+            </div>
+            <div class="noticia-item">
+                <span class="data-noticia">15/12/2025</span>
+                <p>Como solicitar benefício por incapacidade atualizado</p>
+            </div>
+        </div>
+
+        <button class="Btn" aria-label="WhatsApp">
+            <div class="sign">
+                <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                </svg>
+            </div>
+            <div class="text">Whatsapp</div>
+        </button>
+    </footer>
+
+    <script src="../PERGUNTASJS/perguntas.js"></script>
+    
+</body>
+</html>

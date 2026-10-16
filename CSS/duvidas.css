@@ -1,335 +1,258 @@
+/* =========================================================
+   CONTATO, FORMULARIO E PERGUNTAS FREQUENTES
+   ========================================================= */
 .secao-duvida {
     position: relative;
-    width: 100%;
-    background-color: #ffffff;
-    padding-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    padding-bottom: var(--espaco-secao);
+    background: var(--cor-fundo);
 }
 
 .banner-fundo {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(rgba(9, 28, 43, 0.75), rgba(9, 28, 43, 0.75)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 0 8%;
+    width: 100%;
+    min-height: 340px;
+    padding: 64px max(22px, calc((100% - var(--largura-conteudo)) / 2));
+    background:
+        linear-gradient(90deg, rgb(9 28 43 / 88%), rgb(9 28 43 / 68%)),
+        url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80") center / cover no-repeat;
 }
 
 .banner-texto-topo {
-    max-width: 650px;
-    color: #FFFFFF;
+    max-width: 680px;
+    color: #ffffff;
 }
 
 .banner-texto-topo span {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #f1d9ad;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    opacity: 0.9;
 }
 
 .banner-texto-topo h1 {
-    font-size: 2.5rem;
-    margin: 10px 0 15px 0;
-    color: #FFFFFF;
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
 }
 
 .banner-texto-topo p {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.95;
+    max-width: 650px;
+    margin: 0;
+    color: #f0f3f6;
+    font-size: 1.02rem;
+    line-height: 1.8;
 }
 
 .duvida-layout-flex {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1100px;
-    margin: -100px auto 0 auto;
-    padding: 0 20px;
     position: relative;
-    z-index: 10;
-    width: 100%;
-    box-sizing: border-box;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: clamp(24px, 4vw, 46px);
+    width: calc(100% - 44px);
+    max-width: var(--largura-conteudo);
+    margin: -54px auto 0;
 }
 
 .duvida-container {
-    background-color: #ffffff;
-    max-width: 600px;
-    width: 100%;
-    flex-shrink: 0;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-top: 5px solid #091C2B;
+    min-width: 0;
+    padding: clamp(24px, 3vw, 38px);
+    border-top: 5px solid var(--cor-dourado);
+    border-radius: var(--raio-card);
+    background: #ffffff;
+    box-shadow: var(--sombra-card);
 }
 
-.duvida-texto {
-    margin-bottom: 25px;
-    text-align: center;
+.duvida-texto h2,
+.perguntas-frequentes h2 {
+    margin: 0 0 14px;
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+    line-height: 1.3;
 }
 
-.duvida-texto h2 {
-    color: #091C2B;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.titulos-perguntas{
+    padding-top: 30px;
 }
+
 
 .duvida-texto p {
-    color: #555555;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin: 0 0 25px;
+    color: var(--cor-texto-suave);
+    font-size: 0.98rem;
+    line-height: 1.7;
 }
 
 .form-duvida {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .grupo-input {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
 .grupo-input label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #091C2B;
+    color: var(--cor-marinho);
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 .grupo-input input,
 .grupo-input textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #cbd3da;
+    border-radius: 7px;
+    background: #ffffff;
+    color: var(--cor-texto);
     font-size: 1rem;
-    font-family: sans-serif;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    line-height: 1.5;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.grupo-input textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.grupo-input input::placeholder,
+.grupo-input textarea::placeholder {
+    color: #697681;
+    opacity: 1;
 }
 
 .grupo-input input:focus,
 .grupo-input textarea:focus {
-    border-color: #091C2B;
-    box-shadow: 0 0 5px rgba(9, 28, 43, 0.2);
-}
-
-.grupo-input textarea {
-    resize: vertical;
+    border-color: var(--cor-marinho-claro);
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(18 51 74 / 14%);
 }
 
 .btn-enviar-duvida {
-    background-color: #091C2B;
-    color: #FFFFFF;
-    border: none;
-    padding: 14px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 13px 22px;
+    border: 2px solid var(--cor-marinho);
+    border-radius: 7px;
+    background: var(--cor-marinho);
+    color: #ffffff;
+    font-weight: 700;
+    transition: background-color 180ms ease, color 180ms ease;
 }
 
 .btn-enviar-duvida:hover {
-    background-color: #13334c;
-    transform: translateY(-2px);
-}
-
-.btn-enviar-duvida:active {
-    transform: translateY(0);
+    background: #ffffff;
+    color: var(--cor-marinho);
 }
 
 .perguntas-frequentes {
-    flex-grow: 1;
-    margin-top:80px;
+    min-width: 0;
+    padding: 26px 0 0;
 }
 
-.perguntas-frequentes h2 {
-    color: #091C2B;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.faq-item h3 {
-    color: #091C2B;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-}
-
-.faq-item p {
-    color: #444444;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.link-artigo {
-    color: #091C2B;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-.link-artigo:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 900px) {
-    .duvida-layout-flex {
-        flex-direction: column;
-        margin-top: -50px;
-    }
-    
-    .banner-fundo {
-        height: 350px;
-        padding: 0 20px;
-    }
-
-    .banner-texto-topo h1 {
-        font-size: 2rem;
-    }
-}
-
-.secao-duvida {
-    background-color: #ffffff;
-    padding: 0 0 80px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.banner-fundo {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(rgba(9, 28, 43, 0.75), rgba(9, 28, 43, 0.75)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
-}
-
-.banner-texto-topo {
-    max-width: 650px;
-    color: #FFFFFF;
-}
-
-.banner-texto-topo span {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.9;
-}
-
-.banner-texto-topo h1 {
-    font-size: 2.5rem;
-    margin: 10px 0 15px 0;
-    color: #FFFFFF;
-}
-
-.banner-texto-topo p {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.95;
-}
-
-.duvida-layout-flex {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1100px;
-    margin: -100px auto 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-
-.duvida-container {
-    background-color: #ffffff;
-    max-width: 480px;
-    width: 100%;
-    flex-shrink: 0;
-    padding: 40px;
+.faq-item {
+    padding: 24px;
+    border: 1px solid #e1e5e8;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-top: 5px solid #091C2B;
+    background: #ffffff;
 }
 
-.perguntas-frequentes {
-    flex-grow: 1;
-    padding-top: 20px;
-    text-align: justify;
-    
-}
-
-.perguntas-frequentes h2 {
-    color: #091C2B;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    font-family: 'Cormorant Garamond', serif;
-    
-}
 .faq-item h3 {
-    color: #091C2B;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    margin: 0 0 14px;
+    color: var(--cor-marinho);
+    font-family: "Lora", Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.45;
 }
 
 .faq-item p {
-    color: #444444;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    margin: 0 0 14px;
+    color: var(--cor-texto-suave);
+    font-size: 0.98rem;
+    line-height: 1.8;
+    text-align: left;
 }
 
 .link-artigo {
-    color: #091C2B;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--cor-marinho);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--cor-dourado);
+    text-underline-offset: 4px;
 }
 
 .link-artigo:hover {
-    text-decoration: underline;
+    color: var(--cor-dourado-escuro);
 }
 
-
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     .duvida-layout-flex {
-        flex-direction: column;
-        margin-top: -50px;
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 680px;
+        margin-top: -38px;
     }
-    
+
+    .perguntas-frequentes {
+        padding-top: 0;
+    }
+
     .banner-fundo {
-        height: 350px;
-        padding: 0 20px;
-    }
-
-    .banner-texto-topo h1 {
-        font-size: 2rem;
-    }
-
-    .duvida-container {
-        max-width: 100%;
+        min-height: 320px;
+        padding: 52px 24px 78px;
     }
 }
 
-@media (max-width: 768px) {
-    .duvida-container {
-        padding: 20px;
+@media (max-width: 600px) {
+    .secao-duvida {
+        padding-bottom: 54px;
     }
-    
-    .duvida-texto h2 {
-        font-size: 1.5rem;
+
+    .banner-fundo {
+        min-height: auto;
+        padding: 48px 20px 70px;
+    }
+
+    .banner-texto-topo p {
+        font-size: 0.98rem;
+    }
+
+    .duvida-layout-flex {
+        width: calc(100% - 32px);
+        margin-top: -30px;
+        gap: 28px;
+    }
+
+    .duvida-container {
+        padding: 22px 18px;
+    }
+
+    .faq-item {
+        padding: 20px 18px;
+    }
+
+    .btn-enviar-duvida {
+        width: 100%;
     }
 }
