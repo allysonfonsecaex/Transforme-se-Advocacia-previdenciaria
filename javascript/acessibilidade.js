@@ -48,10 +48,7 @@
     try { localStorage.setItem(CHAVE, JSON.stringify(estado)); } catch (e) { }
   }
 
-  /* ---------- tamanho do texto ----------
-   * Lê o tamanho real de cada elemento e aplica o fator em px.
-   * Assim funciona mesmo que o CSS do site use px em vez de rem.
-   */
+  /* ---------- tamanho do texto ---------- */
   var IGNORAR = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, LINK: 1, META: 1, HEAD: 1, TITLE: 1, BR: 1 };
 
   function limparFonte() {
@@ -73,12 +70,11 @@
     var todos = document.body.querySelectorAll('*');
     var lista = [];
 
-    // primeiro lê tudo, depois escreve tudo (evita recalcular layout a cada elemento)
     for (var i = 0; i < todos.length; i++) {
       var el = todos[i];
       if (IGNORAR[el.tagName]) continue;
       if (el.namespaceURI !== 'http://www.w3.org/1999/xhtml') continue;
-      if (el.closest('[vw]')) continue; // não mexe no widget de Libras
+      if (el.closest('[vw]')) continue;
       var px = parseFloat(window.getComputedStyle(el).fontSize);
       if (px) lista.push([el, px]);
     }
@@ -131,7 +127,6 @@
 
   function alternar(modo) {
     estado[modo] = !estado[modo];
-    // noturno e alto contraste não combinam: um desliga o outro
     if (modo === 'noturno' && estado.noturno) estado.contraste = false;
     if (modo === 'contraste' && estado.contraste) estado.noturno = false;
     aplicarClasses();
@@ -174,7 +169,6 @@
     return partes.join(' ');
   }
 
-  // O Chrome corta falas longas, então a leitura é enviada em pedaços.
   function dividir(texto) {
     var frases = texto.match(/[^.!?]+[.!?]*\s*/g) || [];
     var pedacos = [];
@@ -236,8 +230,6 @@
     avisar('Lendo a página. Use "Parar leitura" para interromper.');
   }
 
-
-
   function restaurar() {
     estado.passo = 0;
     estado.noturno = false;
@@ -249,7 +241,6 @@
     aplicarClasses();
     avisar('Configurações de acessibilidade restauradas.');
   }
-
 
   function aoClicar(evento) {
     var alvo = evento.target.closest ? evento.target.closest('[data-acao]') : null;
@@ -273,7 +264,6 @@
     }
     salvarEstado();
   }
-
 
   function melhorarTeclado() {
     var main = document.querySelector('main');
@@ -301,25 +291,36 @@
     }
   }
 
-
+  /* ---------- Modificado para Abrir/Fechar o Painel ---------- */
   function criarBotaoFlutuante() {
     var painel = document.querySelector('.lex-acessibilidade');
     if (!painel) return;
+
+    // Garante que o painel comece oculto se você quiser estilo "pop-up/gaveta"
+    painel.classList.add('lex-painel-fechado');
+
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'lex-ac-flutuante';
-    b.setAttribute('aria-label', 'Ir para as opções de acessibilidade');
+    b.setAttribute('aria-expanded', 'false');
+    b.setAttribute('aria-label', 'Abrir menu de acessibilidade');
     b.innerHTML = '<span aria-hidden="true">&#9855;</span> Acessibilidade';
+
     b.addEventListener('click', function () {
-      var reduzir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      painel.scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'center' });
-      var primeiro = painel.querySelector('button');
-      if (primeiro) primeiro.focus({ preventScroll: true });
+      var aberto = painel.classList.toggle('lex-painel-aberto');
+      painel.classList.toggle('lex-painel-fechado', !aberto);
+      
+      b.setAttribute('aria-expanded', String(aberto));
+      b.setAttribute('aria-label', aberto ? 'Fechar menu de acessibilidade' : 'Abrir menu de acessibilidade');
+
+      if (aberto) {
+        var primeiro = painel.querySelector('button, [tabindex="0"]');
+        if (primeiro) primeiro.focus();
+      }
     });
+
     document.body.appendChild(b);
   }
-
-  
 
   function carregarVLibras() {
     if (document.querySelector('[vw]')) return;
@@ -339,8 +340,6 @@
     document.body.appendChild(s);
   }
 
-  
-
   function iniciar() {
     statusEl = document.getElementById('lex-ac-status');
     carregarEstado();
@@ -352,7 +351,6 @@
 
     document.addEventListener('click', aoClicar);
 
-    // ao redimensionar, os tamanhos de origem mudam (media queries): recalcula
     window.addEventListener('resize', function () {
       if (estado.passo === 0) return;
       clearTimeout(timerResize);

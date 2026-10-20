@@ -1,16 +1,23 @@
-
 /* =====================================================
-   LEXWEB — PAINEL COMPLETO DE ACESSIBILIDADE
+   LEXWEB — PAINEL COMPLETO DE ACESSIBILIDADE (AESTHETIC)
    Modo noturno | Alto contraste | Leitura | Espaçamento
-   Cards horizontais | Responsividade
    ===================================================== */
+
+:root {
+    --lex-primary: #6366f1;
+    --lex-primary-hover: #4f46e5;
+    --lex-bg-panel: rgba(255, 255, 255, 0.95);
+    --lex-text-main: #1e293b;
+    --lex-border: #e2e8f0;
+    --lex-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
 
 /* =====================================================
    1. FOCO E NAVEGAÇÃO POR TECLADO
    ===================================================== */
 
 :focus-visible {
-    outline: 3px solid #1688ff !important;
+    outline: 3px solid var(--lex-primary) !important;
     outline-offset: 3px !important;
 }
 
@@ -22,15 +29,17 @@ main:focus {
 .lex-pular-conteudo {
     position: fixed;
     top: -100px;
-    left: 12px;
+    left: 16px;
     z-index: 100000;
-    padding: 12px 18px;
-    background: #000;
+    padding: 10px 20px;
+    background: #1e293b;
     color: #fff;
-    font-weight: 700;
-    text-decoration: underline;
-    border-radius: 0 0 8px 8px;
-    transition: top .15s ease;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: top .2s ease;
 }
 
 .lex-pular:focus,
@@ -48,11 +57,12 @@ main:focus {
     width: 100%;
     max-width: 100%;
     margin: 24px auto 0;
-    padding: 22px;
-    background: #f4f4f4;
-    color: #17212b;
-    border: 1px solid #d0d5dd;
-    border-radius: 12px;
+    padding: 24px;
+    background: #f8fafc;
+    color: var(--lex-text-main);
+    border: 1px solid var(--lex-border);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 
 .lex-acessibilidade *,
@@ -62,23 +72,25 @@ main:focus {
 }
 
 .lex-acessibilidade-intro {
-    margin: 0 0 16px;
+    margin: 0 0 18px;
 }
 
 .lex-acessibilidade-intro h2 {
     margin: 0 0 6px;
     color: inherit;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .lex-acessibilidade-intro p {
     margin: 0;
-    color: inherit;
+    color: #64748b;
+    font-size: 0.92rem;
 }
 
 /* =====================================================
    3. CARDS HORIZONTAIS
-   Vários controles por linha, sem botões gigantes
    ===================================================== */
 
 .lex-acessibilidade .lex-acessibilidade-botoes {
@@ -87,11 +99,9 @@ main:focus {
     flex-wrap: wrap !important;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
 }
-
-/* Cada recurso ocupa somente o espaço necessário */
 
 .lex-acessibilidade .lex-ac-btn {
     display: inline-flex !important;
@@ -99,73 +109,64 @@ main:focus {
     flex-direction: row !important;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 8px;
 
     width: auto !important;
     min-width: 0 !important;
     max-width: 100%;
-    min-height: 40px;
+    min-height: 42px;
     margin: 0;
-    padding: 8px 11px;
+    padding: 8px 14px;
 
-    background: #fff;
-    color: #17212b;
-    border: 1px solid #c6cdd4;
-    border-radius: 7px;
+    background: #ffffff;
+    color: var(--lex-text-main);
+    border: 1px solid var(--lex-border);
+    border-radius: 10px;
 
     font-family: inherit;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     text-align: center;
     white-space: nowrap;
 
     cursor: pointer;
-    transition:
-        background-color .2s ease,
-        border-color .2s ease,
-        color .2s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .lex-acessibilidade .lex-ac-btn:hover {
-    background: #edf6ff;
-    border-color: #1676cc;
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
 }
 
 .lex-acessibilidade .lex-ac-btn:active {
-    transform: translateY(1px);
+    transform: translateY(0);
 }
 
-/* Estado ativo */
-
+/* Estado ativo (Aesthetic pill design) */
 .lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
-    background: #17212b;
+    background: #1e293b;
     color: #fff;
-    border-color: #17212b;
+    border-color: #1e293b;
+    box-shadow: 0 2px 4px rgba(30, 41, 59, 0.2);
 }
 
-/* Símbolos originais do HTML */
-
+/* Símbolos e Ícones */
 .lex-acessibilidade .lex-ac-icone {
     display: inline-flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-
     min-width: 18px;
     height: 20px;
     margin: 0;
     padding: 0;
-
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 /* Restaurar configurações */
-
 .lex-acessibilidade .lex-ac-restaurar {
     display: inline-flex !important;
     flex: 0 1 auto !important;
@@ -175,45 +176,44 @@ main:focus {
 
     width: auto !important;
     min-width: 0 !important;
-    min-height: 40px;
+    min-height: 42px;
     margin: 0;
-    padding: 8px 12px;
+    padding: 8px 14px;
 
-    background: #e8edf2;
-    color: #17212b;
-    border: 1px solid #c6cdd4;
-    border-radius: 7px;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid var(--lex-border);
+    border-radius: 10px;
 
     font-family: inherit;
     font-size: 13px;
-    font-weight: 700;
-    line-height: 1.3;
-
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .lex-acessibilidade .lex-ac-restaurar:hover {
-    background: #dce5ed;
-    border-color: #1676cc;
+    background: #e2e8f0;
+    color: #1e293b;
 }
 
 /* Mensagens de estado */
-
 .lex-acessibilidade .lex-ac-status {
     min-height: 1.4em;
-    margin: 12px 0 0;
-    color: inherit;
-    font-size: .9rem;
+    margin: 14px 0 0;
+    color: #64748b;
+    font-size: 0.88rem;
+    font-weight: 500;
 }
 
 /* =====================================================
-   4. BOTÃO FLUTUANTE
+   4. BOTÃO FLUTUANTE (Super Clean & Floating)
    ===================================================== */
 
 .lex-ac-flutuante {
     position: fixed;
-    left: 16px;
-    bottom: 16px;
+    left: 20px;
+    bottom: 20px;
     z-index: 9998;
 
     display: inline-flex;
@@ -221,41 +221,38 @@ main:focus {
     justify-content: center;
     gap: 8px;
 
-    min-height: 48px;
-    padding: 0 18px;
+    min-height: 46px;
+    padding: 0 20px;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 600;
 
     color: #fff;
-    background: #17212b;
-    border: 2px solid #fff;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 999px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
 
     cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .lex-ac-flutuante:hover {
-    background: #263d50;
+    background: #334155;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.4);
 }
 
 /* =====================================================
    5. MODO NOTURNO — PÁGINA INTEIRA
-   Fundo uniforme e textos legíveis.
-   Preserva o carrossel e as imagens.
    ===================================================== */
-
-/* Fundo principal */
 
 html.lex-noturno,
 html.lex-noturno body {
-    background-color: #101820 !important;
-    color: #f1f5f9 !important;
+    background-color: #0b0f19 !important;
+    color: #e2e8f0 !important;
 }
-
-/* Áreas estruturais: cabeçalho, conteúdo e rodapé */
 
 html.lex-noturno body header,
 html.lex-noturno body nav,
@@ -284,18 +281,13 @@ html.lex-noturno body .noticias-grid,
 html.lex-noturno body .container-card,
 html.lex-noturno body .center,
 html.lex-noturno body .texto_centro {
-    background-color: #101820 !important;
-    color: #f1f5f9 !important;
+    background-color: #0b0f19 !important;
+    color: #e2e8f0 !important;
 }
-
-/* Elementos internos transparentes para evitar
-   manchas e blocos brancos dentro das seções */
 
 html.lex-noturno body main > section:not(.lex-carousel) *:not(img):not(video):not(iframe):not(svg):not(svg *) {
-    color: #f1f5f9;
+    color: #e2e8f0;
 }
-
-/* Cartões, perguntas e conteúdo de notícias */
 
 html.lex-noturno body .card-item,
 html.lex-noturno body .noticia-card,
@@ -306,13 +298,11 @@ html.lex-noturno body .faq-item,
 html.lex-noturno body .card,
 html.lex-noturno body .artigo-card,
 html.lex-noturno body .artigo-conteudo {
-    background-color: #101820 !important;
-    color: #f1f5f9 !important;
-    border-color: #405463 !important;
+    background-color: #111827 !important;
+    color: #e2e8f0 !important;
+    border-color: #1f2937 !important;
     box-shadow: none;
 }
-
-/* Títulos e textos das áreas principais */
 
 html.lex-noturno body h1:not(.lex-carousel *),
 html.lex-noturno body h2:not(.lex-carousel *),
@@ -324,102 +314,84 @@ html.lex-noturno body p:not(.lex-carousel *),
 html.lex-noturno body li:not(.lex-carousel *),
 html.lex-noturno body label:not(.lex-carousel *),
 html.lex-noturno body small:not(.lex-carousel *) {
-    color: #f1f5f9;
+    color: #f8fafc;
 }
 
-/* Links */
-
 html.lex-noturno body a:not(.lex-carousel a) {
-    color: #8ecbff;
+    color: #38bdf8;
 }
 
 html.lex-noturno body a:not(.lex-carousel a):hover {
-    color: #c2e4ff;
+    color: #7dd3fc;
 }
-
-/* Ícones SVG: preserva o preenchimento existente quando possível */
 
 html.lex-noturno body svg {
     color: inherit;
 }
 
-/* Formulários */
-
 html.lex-noturno body input:not([type="checkbox"]):not([type="radio"]),
 html.lex-noturno body textarea,
 html.lex-noturno body select {
-    background-color: #182631 !important;
-    color: #f1f5f9 !important;
-    border: 1px solid #607586 !important;
+    background-color: #111827 !important;
+    color: #e2e8f0 !important;
+    border: 1px solid #374151 !important;
 }
 
 html.lex-noturno body input::placeholder,
 html.lex-noturno body textarea::placeholder {
-    color: #c1ccd5 !important;
+    color: #6b7280 !important;
     opacity: 1;
 }
-
-/* Botões comuns */
 
 html.lex-noturno body button:not(.lex-ac-flutuante),
 html.lex-noturno body .btn,
 html.lex-noturno body [class*="btn-"] {
-    border-color: #607586;
+    border-color: #374151;
 }
-
-/* Botões importantes podem preservar o próprio fundo
-   quando possuem identidade visual específica */
-
-html.lex-noturno body .btn-enviar-duvida {
-    color: #fff !important;
-}
-
-/* Rodapé */
 
 html.lex-noturno body footer {
-    background-color: #101820 !important;
-    color: #f1f5f9 !important;
+    background-color: #0b0f19 !important;
+    color: #e2e8f0 !important;
 }
 
 /* Painel de acessibilidade no modo noturno */
-
 html.lex-noturno body .lex-acessibilidade {
-    background-color: #101820 !important;
-    color: #f1f5f9 !important;
-    border-color: #405463 !important;
+    background-color: #111827 !important;
+    color: #e2e8f0 !important;
+    border-color: #1f2937 !important;
 }
 
-html.lex-noturno body .lex-acessibilidade h2,
-html.lex-noturno body .lex-acessibilidade p {
-    color: #f1f5f9 !important;
+html.lex-noturno body .lex-acessibilidade h2 {
+    color: #f8fafc !important;
+}
+
+html.lex-noturno body .lex-acessibilidade p,
+html.lex-noturno body .lex-acessibilidade .lex-ac-status {
+    color: #9ca3af !important;
 }
 
 html.lex-noturno body .lex-acessibilidade .lex-ac-btn,
 html.lex-noturno body .lex-acessibilidade .lex-ac-restaurar {
-    background-color: #182631 !important;
-    color: #f1f5f9 !important;
-    border-color: #607586 !important;
+    background-color: #1f2937 !important;
+    color: #e2e8f0 !important;
+    border-color: #374151 !important;
 }
 
 html.lex-noturno body .lex-acessibilidade .lex-ac-btn:hover,
 html.lex-noturno body .lex-acessibilidade .lex-ac-restaurar:hover {
-    background-color: #243b4b !important;
+    background-color: #374151 !important;
 }
 
 html.lex-noturno body .lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
-    background-color: #30485a !important;
+    background-color: #4b5563 !important;
     color: #fff !important;
 }
-
-/* Botão flutuante no modo noturno */
 
 html.lex-noturno body .lex-ac-flutuante {
-    background-color: #182631 !important;
+    background-color: #1f2937 !important;
     color: #fff !important;
-    border-color: #607586 !important;
+    border-color: #374151 !important;
 }
-
-/* Preserva imagens e mídia */
 
 html.lex-noturno body img,
 html.lex-noturno body video,
@@ -429,12 +401,8 @@ html.lex-noturno body canvas {
     filter: none !important;
 }
 
-/* O carrossel fica fora das regras de fundo do modo noturno.
-   Não aplicar inversão, filtro ou mudança de cor aos slides. */
-
 /* =====================================================
    6. ALTO CONTRASTE — PÁGINA INTEIRA
-   Fundo preto, textos brancos, links amarelos.
    ===================================================== */
 
 html.lex-contraste,
@@ -442,8 +410,6 @@ html.lex-contraste body {
     background: #000 !important;
     color: #fff !important;
 }
-
-/* Todos os elementos da página em alto contraste */
 
 html.lex-contraste body *:not(img):not(video):not(iframe):not([vw]):not([vw] *) {
     background-color: #000 !important;
@@ -454,8 +420,6 @@ html.lex-contraste body *:not(img):not(video):not(iframe):not([vw]):not([vw] *) 
     text-shadow: none !important;
 }
 
-/* Pseudoelementos decorativos */
-
 html.lex-contraste body *::before,
 html.lex-contraste body *::after {
     background-image: none !important;
@@ -463,16 +427,12 @@ html.lex-contraste body *::after {
     text-shadow: none !important;
 }
 
-/* Links amarelos */
-
 html.lex-contraste body a,
 html.lex-contraste body a * {
     color: #ffff00 !important;
     text-decoration: underline !important;
     text-decoration-thickness: 2px !important;
 }
-
-/* Controles com bordas visíveis */
 
 html.lex-contraste body button,
 html.lex-contraste body .cta,
@@ -483,34 +443,19 @@ html.lex-contraste body select {
     border: 2px solid #fff !important;
 }
 
-/* Texto auxiliar dos campos */
-
 html.lex-contraste body ::placeholder {
     color: #ccc !important;
     opacity: 1;
 }
-
-/* Ícones */
 
 html.lex-contraste body svg,
 html.lex-contraste body svg * {
     fill: #ffff00 !important;
 }
 
-/* Imagens de ícones específicos */
-
-html.lex-contraste body .imagens,
-html.lex-contraste body .buscar img {
-    filter: invert(1);
-}
-
-/* Foco amarelo */
-
 html.lex-contraste body :focus-visible {
     outline-color: #ffff00 !important;
 }
-
-/* Painel no alto contraste */
 
 html.lex-contraste body .lex-acessibilidade {
     background: #000 !important;
@@ -541,8 +486,6 @@ html.lex-contraste body .lex-acessibilidade .lex-ac-btn[aria-pressed="true"] {
     border-color: #ffff00 !important;
 }
 
-/* Botão flutuante no alto contraste */
-
 html.lex-contraste body .lex-ac-flutuante {
     background: #000 !important;
     color: #ffff00 !important;
@@ -551,7 +494,6 @@ html.lex-contraste body .lex-ac-flutuante {
 
 /* =====================================================
    7. ESPAÇAMENTO DE LEITURA
-   WCAG 1.4.12
    ===================================================== */
 
 html.lex-espacamento body p,
@@ -600,6 +542,7 @@ html.lex-links body a {
 @media (max-width: 480px) {
     .lex-acessibilidade {
         padding: 14px;
+        border-radius: 12px;
     }
 
     .lex-acessibilidade .lex-acessibilidade-botoes {
@@ -636,5 +579,41 @@ html.lex-links body a {
     .lex-pular-conteudo {
         transition: none !important;
         animation: none !important;
+    }
+}
+
+/* =====================================================
+   11. COMPORTAMENTO DO PAINEL (Aberto / Fechado)
+   ===================================================== */
+
+.lex-acessibilidade.lex-painel-fechado {
+    display: none; 
+}
+
+.lex-acessibilidade.lex-painel-aberto {
+    display: block;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    z-index: 9999;
+    max-width: 420px;
+    width: calc(100% - 40px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 22px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    animation: lexPopupFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lexPopupFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }

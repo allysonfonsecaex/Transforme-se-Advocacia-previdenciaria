@@ -1,0 +1,248 @@
+/* ==========================================================================
+   CENTRAL LEX: estilos
+   Todas as classes começam com "cl-" e todas as regras ficam dentro de
+   ".central-lex", para não mexer no resto do site (e o resto do site não
+   mexer na Central). Para combinar com a sua identidade, troque as cores
+   nas variáveis logo abaixo.
+   ========================================================================== */
+.central-lex {
+  --cl-primaria: #1f3a5f;
+  --cl-primaria-escura: #14263f;
+  --cl-acento: #a97c2f;
+  --cl-fundo: #f7f5f0;
+  --cl-papel: #ffffff;
+  --cl-texto: #1d2733;
+  --cl-suave: #4a5565;
+  --cl-borda: #d6dae0;
+  --cl-ok-fundo: #e6f4ec;
+  --cl-ok-texto: #14532d;
+  --cl-aviso-fundo: #fff4d6;
+  --cl-aviso-texto: #6b4500;
+  --cl-erro-fundo: #fde8e8;
+  --cl-erro-texto: #8a1c1c;
+
+  display: block;
+  padding: 32px 20px 64px;
+  color: var(--cl-texto);
+  background: var(--cl-fundo);
+  line-height: 1.55;
+  text-align: left;
+}
+.central-lex *, .central-lex *::before, .central-lex *::after { box-sizing: border-box; }
+.central-lex .cl-miolo { max-width: 1080px; margin: 0 auto; }
+
+.central-lex h1, .central-lex h2, .central-lex h3, .central-lex h4 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  color: var(--cl-primaria-escura);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: left;
+}
+.central-lex h1 { margin: 0 0 8px; font-size: clamp(1.9rem, 4.5vw, 2.7rem); }
+.central-lex p { margin: 0 0 1em; }
+.central-lex a { color: var(--cl-primaria); }
+.central-lex :focus-visible { outline: 3px solid #1a73e8; outline-offset: 3px; }
+
+.central-lex .cl-sub { max-width: 62ch; margin: 0 0 14px; color: var(--cl-suave); }
+
+/* ---------- avisos e resultados ---------- */
+.central-lex .cl-caixa {
+  padding: 14px 16px;
+  color: var(--cl-aviso-texto);
+  background: var(--cl-aviso-fundo);
+  border-left: 6px solid var(--cl-acento);
+  border-radius: 10px;
+}
+.central-lex .cl-caixa p { margin: 0 0 8px; }
+.central-lex .cl-caixa p:last-child { margin: 0; }
+.central-lex .cl-caixa ul { margin: 6px 0 0; padding-left: 1.2em; }
+.central-lex .cl-caixa.cl-ok { color: var(--cl-ok-texto); background: var(--cl-ok-fundo); border-left-color: var(--cl-ok-texto); }
+.central-lex .cl-caixa.cl-erro { color: var(--cl-erro-texto); background: var(--cl-erro-fundo); border-left-color: var(--cl-erro-texto); }
+
+/* ---------- abas e painéis ---------- */
+.central-lex .cl-abas { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 20px; }
+.central-lex .cl-abas [role="tab"] {
+  min-height: 48px;
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--cl-primaria);
+  background: #fff;
+  border: 2px solid var(--cl-borda);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.central-lex .cl-abas [role="tab"]:hover { border-color: var(--cl-primaria); }
+.central-lex .cl-abas [role="tab"][aria-selected="true"] { color: #fff; background: var(--cl-primaria); border-color: var(--cl-primaria); }
+
+.central-lex .cl-painel {
+  padding: clamp(18px, 3vw, 32px);
+  background: var(--cl-papel);
+  border: 1px solid var(--cl-borda);
+  border-radius: 14px;
+}
+.central-lex .cl-painel[hidden] { display: none; }
+.central-lex .cl-painel > h2 { margin: 0 0 6px; font-size: 1.6rem; }
+.central-lex .cl-intro { margin: 0 0 20px; max-width: 62ch; color: var(--cl-suave); }
+.central-lex .cl-painel h3 { margin: 0 0 8px; font-size: 1.25rem; }
+.central-lex .cl-painel h4 { margin: 20px 0 8px; font-size: 1.05rem; }
+.central-lex .cl-nota { margin: 18px 0 0; font-size: 0.92rem; color: var(--cl-suave); }
+
+/* ---------- botões, campos, chips ---------- */
+.central-lex .cl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 20px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  background: var(--cl-primaria);
+  border: 2px solid var(--cl-primaria);
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.central-lex .cl-btn:hover { background: var(--cl-primaria-escura); border-color: var(--cl-primaria-escura); }
+.central-lex .cl-btn.cl-sec { color: var(--cl-primaria); background: #fff; }
+.central-lex .cl-btn.cl-sec:hover { color: #fff; background: var(--cl-primaria-escura); }
+.central-lex .cl-acoes { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+
+.central-lex .cl-campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.central-lex .cl-campo label { font-weight: 600; }
+.central-lex .cl-campo small { color: var(--cl-suave); }
+.central-lex input[type="text"],
+.central-lex input[type="search"],
+.central-lex input[type="date"],
+.central-lex input[type="number"],
+.central-lex select {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 8px 12px;
+  font: inherit;
+  color: var(--cl-texto);
+  background: #fff;
+  border: 2px solid #8b95a5;
+  border-radius: 8px;
+}
+.central-lex .cl-seletor { max-width: 460px; }
+.central-lex .cl-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.central-lex .cl-grade > * { min-width: 0; }
+.central-lex .cl-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.central-lex .cl-chip {
+  min-height: 40px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--cl-primaria);
+  background: #fff;
+  border: 2px solid var(--cl-borda);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.central-lex .cl-chip:hover { border-color: var(--cl-primaria); }
+
+/* ---------- 1. guia ---------- */
+.central-lex .cl-lista-docs { margin: 0; padding-left: 1.3em; }
+.central-lex .cl-lista-docs li { margin-bottom: 8px; }
+.central-lex .cl-lista-docs small, .central-lex .cl-pend-item small { display: block; color: var(--cl-suave); }
+
+/* ---------- 2. calculadoras ---------- */
+.central-lex .cl-calc { margin-bottom: 28px; padding: 20px; background: var(--cl-fundo); border: 1px solid var(--cl-borda); border-radius: 12px; }
+.central-lex .cl-calc:last-child { margin-bottom: 0; }
+.central-lex .cl-calc > p { margin: 0 0 14px; color: var(--cl-suave); }
+.central-lex .cl-linha-periodo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--cl-borda);
+}
+.central-lex .cl-linha-periodo > * { min-width: 0; }
+.central-lex .cl-linha-periodo .cl-campo { margin: 0; }
+.central-lex .cl-saida { margin-top: 16px; display: grid; gap: 12px; }
+
+/* ---------- 3. assistente ---------- */
+.central-lex .cl-ass-prog { margin: 0 0 6px; font-size: 0.9rem; font-weight: 600; color: var(--cl-suave); text-transform: uppercase; letter-spacing: 0.04em; }
+.central-lex .cl-ass-ajuda { margin: 0 0 16px; color: var(--cl-suave); }
+.central-lex .cl-ass-opcoes { display: grid; gap: 10px; max-width: 640px; }
+.central-lex .cl-ass-opcao {
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 16px;
+  font: inherit;
+  text-align: left;
+  color: var(--cl-primaria-escura);
+  background: #fff;
+  border: 2px solid var(--cl-primaria);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.central-lex .cl-ass-opcao:hover { color: #fff; background: var(--cl-primaria); }
+.central-lex .cl-ass-passos { margin: 0 0 16px; padding-left: 1.3em; }
+.central-lex .cl-ass-passos li { margin-bottom: 6px; }
+
+/* ---------- 4. organizador ---------- */
+.central-lex .cl-pend-topo { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.central-lex .cl-pend-prog { margin: 6px 0 18px; }
+.central-lex .cl-pend-prog progress { width: 100%; height: 14px; }
+.central-lex .cl-pend-grupo { margin: 0 0 16px; padding: 12px 16px 6px; border: 1px solid var(--cl-borda); border-radius: 10px; }
+.central-lex .cl-pend-grupo legend { padding: 0 8px; font-weight: 700; color: var(--cl-primaria-escura); }
+.central-lex .cl-pend-itens { margin: 0; padding: 0; list-style: none; }
+.central-lex .cl-pend-item { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; }
+.central-lex .cl-pend-item input { flex: none; width: 24px; height: 24px; margin-top: 2px; accent-color: var(--cl-primaria); }
+.central-lex .cl-pend-item label { flex: 1; cursor: pointer; }
+.central-lex .cl-pend-extra { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-top: 8px; }
+.central-lex .cl-pend-extra .cl-campo { flex: 1; min-width: 220px; margin: 0; }
+.central-lex .cl-so-print { display: none; }
+
+/* ---------- 5. pesquisa ---------- */
+.central-lex .cl-pesq-linha { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+.central-lex .cl-pesq-linha .cl-campo { flex: 1; min-width: 240px; margin: 0; }
+.central-lex #pesq-status { min-height: 1.4em; margin: 14px 0 6px; color: var(--cl-suave); }
+.central-lex .cl-resultados { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.central-lex .cl-res { padding: 14px 16px; border: 1px solid var(--cl-borda); border-radius: 10px; }
+.central-lex .cl-res h3 { margin: 6px 0 4px; font-size: 1.1rem; }
+.central-lex .cl-res p { margin: 0; color: var(--cl-suave); }
+.central-lex .cl-selo {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cl-primaria-escura);
+  background: #e9eef5;
+  border-radius: 999px;
+}
+.central-lex .cl-vazio { padding: 20px; text-align: center; background: #fff; border: 1px dashed var(--cl-borda); border-radius: 10px; }
+
+/* ---------- celular ---------- */
+@media (max-width: 720px) {
+  .central-lex .cl-linha-periodo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .central-lex .cl-linha-periodo .cl-campo:first-child,
+  .central-lex .cl-linha-periodo .cl-btn { grid-column: 1 / -1; }
+  .central-lex .cl-abas [role="tab"] { flex: 1 1 calc(50% - 8px); }
+}
+
+/* ---------- impressão: só a lista do organizador ---------- */
+@media print {
+  header, footer, .lex-acessibilidade, .lex-ac-flutuante, .lex-pular, [vw] { display: none !important; }
+  .central-lex { padding: 0; background: #fff; }
+  .central-lex .cl-abas, .central-lex .cl-sub, .central-lex .cl-geral, .central-lex .cl-nao-print,
+  .central-lex .cl-painel > h2, .central-lex .cl-intro, .central-lex .cl-pend-topo,
+  .central-lex .cl-pend-prog, .central-lex .cl-pend-extra, .central-lex h1 { display: none !important; }
+  .central-lex .cl-painel { padding: 0; border: 0; }
+  .central-lex .cl-painel[hidden] { display: none !important; }
+  .central-lex .cl-so-print { display: block !important; margin: 0 0 6px; }
+  .central-lex .cl-so-print.cl-tit { font-size: 1.4rem; font-weight: 700; font-family: 'Lora', Georgia, serif; }
+  .central-lex .cl-pend-grupo { break-inside: avoid; }
+  .central-lex .cl-pend-item input { width: 18px; height: 18px; }
+}

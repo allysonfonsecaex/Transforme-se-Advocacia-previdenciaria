@@ -1,0 +1,471 @@
+
+/* =========================================
+   LEXWEB — PAINEL DE ACESSOS RÁPIDOS
+========================================= */
+
+.lex-acessos {
+    --lex-navy: #091c2b;
+    --lex-blue: #2994ff;
+    --lex-beige: white;
+    --lex-text: #354454;
+    --lex-muted: #687582;
+    --lex-border: rgba(9, 28, 43, 0.12);
+
+    position: relative;
+    padding: 96px 24px 76px;
+    background: var(--lex-beige);
+    color: var(--lex-navy);
+    overflow: hidden;
+}
+
+.lex-acessos,
+.lex-acessos * {
+    box-sizing: border-box;
+}
+
+.lex-acessos-container {
+    width: min(1160px, 100%);
+    margin-inline: auto;
+}
+
+/* Introdução */
+
+.lex-acessos-intro {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.lex-acessos-etiqueta {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: #246fae;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.lex-acessos-intro h2 {
+    max-width: 680px;
+    margin: 0 auto 18px;
+    color: var(--lex-navy);
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.035em;
+}
+
+.lex-acessos-intro p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--lex-text);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+/* Grade */
+
+.lex-acessos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+/* Cards */
+
+.lex-acesso-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px 27px 27px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--lex-border);
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(9, 28, 43, 0.035);
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease;
+}
+
+.lex-acesso-card:hover {
+    transform: translateY(-6px);
+    background: #fff;
+    border-color: rgba(41, 148, 255, 0.5);
+    box-shadow: 0 20px 42px rgba(9, 28, 43, 0.09);
+}
+
+.lex-acesso-card:focus-within {
+    outline: 3px solid rgba(41, 148, 255, 0.55);
+    outline-offset: 4px;
+}
+
+/* Primeiro card em destaque */
+
+.lex-acesso-destaque {
+    background: var(--lex-navy);
+    border-color: var(--lex-navy);
+    color: #fff;
+    box-shadow: 0 18px 38px rgba(9, 28, 43, 0.14);
+}
+
+.lex-acesso-destaque:hover {
+    background: #102b40;
+    border-color: #102b40;
+}
+
+/* Número e símbolo */
+
+.lex-acesso-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.lex-acesso-numero {
+    color: var(--lex-blue);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.lex-acesso-simbolo {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border: 1px solid rgba(41, 148, 255, 0.3);
+    border-radius: 50%;
+    color: #1679d0;
+    font-size: 1.45rem;
+    line-height: 1;
+    transition:
+        color 200ms ease,
+        background-color 200ms ease,
+        transform 200ms ease;
+}
+
+.lex-acesso-card:hover .lex-acesso-simbolo {
+    transform: rotate(-8deg);
+    background: rgba(41, 148, 255, 0.1);
+}
+
+.lex-acesso-destaque .lex-acesso-simbolo {
+    color: #8dc8ff;
+    border-color: rgba(141, 200, 255, 0.35);
+}
+
+/* Textos */
+
+.lex-acesso-categoria {
+    display: block;
+    margin-bottom: 12px;
+    color: #246fae;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.lex-acesso-destaque .lex-acesso-categoria {
+    color: #8dc8ff;
+}
+
+.lex-acesso-card h3 {
+    margin: 0 0 14px;
+    color: var(--lex-navy);
+    font-family: "Lora", Georgia, serif;
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+}
+
+.lex-acesso-destaque h3 {
+    color: #fff;
+}
+
+.lex-acesso-card > p {
+    margin: 0 0 25px;
+    color: var(--lex-text);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.91rem;
+    line-height: 1.8;
+}
+
+.lex-acesso-destaque > p {
+    color: #d5e0e9;
+}
+
+/* Links internos */
+
+.lex-acesso-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+.lex-acesso-links li {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--lex-border);
+}
+
+.lex-acesso-destaque .lex-acesso-links li {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.lex-acesso-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    color: var(--lex-navy);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.lex-acesso-links a span {
+    flex-shrink: 0;
+    color: #247fc9;
+    font-size: 1.1rem;
+    transition: transform 180ms ease;
+}
+
+.lex-acesso-links a:hover {
+    color: #1679d0;
+}
+
+.lex-acesso-links a:hover span {
+    transform: translateX(4px);
+}
+
+.lex-acesso-destaque .lex-acesso-links a {
+    color: #f3f7fb;
+}
+
+.lex-acesso-destaque .lex-acesso-links a span {
+    color: #8dc8ff;
+}
+
+.lex-acesso-destaque .lex-acesso-links a:hover {
+    color: #8dc8ff;
+}
+
+/* Botão de cada card */
+
+.lex-acesso-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+    padding: 14px 16px;
+    border: 1px solid rgba(41, 148, 255, 0.4);
+    border-radius: 9px;
+    background: rgba(41, 148, 255, 0.07);
+    color: var(--lex-navy);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.87rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease;
+}
+
+.lex-acesso-cta span {
+    font-size: 1.15rem;
+    transition: transform 180ms ease;
+}
+
+.lex-acesso-cta:hover {
+    background: var(--lex-blue);
+    border-color: var(--lex-blue);
+    color: #fff;
+}
+
+.lex-acesso-cta:hover span {
+    transform: translateX(4px);
+}
+
+.lex-acesso-destaque .lex-acesso-cta {
+    background: var(--lex-blue);
+    border-color: var(--lex-blue);
+    color: #fff;
+}
+
+.lex-acesso-destaque .lex-acesso-cta:hover {
+    background: #147bd5;
+    border-color: #147bd5;
+}
+
+/* Nota informativa */
+
+.lex-acessos-nota {
+    max-width: 760px;
+    margin: 32px auto 0;
+    color: var(--lex-muted);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Animação opcional ativada pelo JavaScript */
+
+.lex-acessos .lex-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 550ms ease,
+        transform 550ms ease;
+}
+
+.lex-acessos .lex-reveal.lex-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tablets */
+
+@media (max-width: 980px) {
+    .lex-acessos {
+        padding: 76px 22px 64px;
+    }
+
+    .lex-acessos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .lex-acesso-card {
+        padding: 26px 23px 23px;
+    }
+
+    .lex-acesso-destaque {
+        grid-column: 1 / -1;
+    }
+
+    .lex-acesso-destaque .lex-acesso-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 18px;
+    }
+
+    .lex-acesso-destaque .lex-acesso-links li {
+        min-width: 0;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 620px) {
+    .lex-acessos {
+        padding: 58px 18px 48px;
+    }
+
+    .lex-acessos-intro {
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .lex-acessos-etiqueta {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+    }
+
+    .lex-acessos-intro h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+    }
+
+    .lex-acessos-intro p {
+        font-size: 0.94rem;
+        line-height: 1.75;
+    }
+
+    .lex-acessos-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .lex-acesso-destaque {
+        grid-column: auto;
+    }
+
+    .lex-acesso-destaque .lex-acesso-links {
+        display: flex;
+    }
+
+    .lex-acesso-card {
+        padding: 25px 22px 22px;
+        border-radius: 14px;
+    }
+
+    .lex-acesso-topo {
+        margin-bottom: 22px;
+    }
+
+    .lex-acesso-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .lex-acesso-card > p {
+        font-size: 0.9rem;
+    }
+
+    .lex-acesso-links a {
+        padding: 15px 0;
+        font-size: 0.9rem;
+    }
+
+    .lex-acesso-cta {
+        min-height: 48px;
+    }
+
+    .lex-acessos-nota {
+        margin-top: 25px;
+        text-align: left;
+    }
+}
+
+/* Acessibilidade: reduzir movimento */
+
+@media (prefers-reduced-motion: reduce) {
+    .lex-acesso-card,
+    .lex-acesso-simbolo,
+    .lex-acesso-links a,
+    .lex-acesso-links a span,
+    .lex-acesso-cta,
+    .lex-acesso-cta span,
+    .lex-acessos .lex-reveal {
+        transition: none;
+    }
+
+    .lex-acesso-card:hover {
+        transform: none;
+    }
+
+    .lex-acessos .lex-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
